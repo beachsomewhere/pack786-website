@@ -5,7 +5,7 @@ import { getFeaturedEvents, getUpcomingEvents } from "@/lib/events";
 
 // Only one family has a signed photo-release waiver on file so far — the rest
 // of the event photo batch is held out of `public/` until more come in.
-const APPROVED_TRAIL_PHOTO = "/media/photos/750617643_10108625404761847_6173254261643733498_n.jpg";
+const APPROVED_PHOTO = "/media/photos/750617643_10108625404761847_6173254261643733498_n.jpg";
 
 const WHAT_WE_DO = [
   { title: "Camping & Outdoor Adventures", desc: "Family campouts that build real outdoor skills.", icon: "⛺" },
@@ -45,8 +45,8 @@ export default async function HomePage() {
           </div>
           <div className="relative aspect-[4/3] overflow-hidden rounded-trail">
             <Image
-              src="/media/homepage.jpg"
-              alt="Pack 786 scouts on an outdoor adventure"
+              src={APPROVED_PHOTO}
+              alt="Pack 786 scout on an outdoor adventure"
               fill
               priority
               className="object-cover"
@@ -135,21 +135,12 @@ export default async function HomePage() {
       </section>
 
       {/* Gallery preview */}
-      <section className="mx-auto max-w-6xl px-4 py-16">
-        <h2 className="text-center font-display text-3xl font-bold text-trail-blue">From the Trail</h2>
-        <p className="mx-auto mt-2 max-w-xl text-center text-sm text-trail-ink/60">
+      <section className="mx-auto max-w-3xl px-4 py-16 text-center">
+        <h2 className="font-display text-3xl font-bold text-trail-blue">From the Trail</h2>
+        <p className="mx-auto mt-2 max-w-xl text-sm text-trail-ink/60">
           Our full photo gallery is coming soon, once we&rsquo;ve collected photo-release consent from
           families.
         </p>
-        <div className="relative mx-auto mt-6 aspect-[16/9] max-w-2xl overflow-hidden rounded-trail bg-trail-green/10">
-          <Image
-            src={APPROVED_TRAIL_PHOTO}
-            alt="Pack 786 event photo"
-            fill
-            sizes="(min-width: 768px) 672px, 100vw"
-            className="object-cover"
-          />
-        </div>
       </section>
 
       {/* Testimonial */}
