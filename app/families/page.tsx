@@ -11,7 +11,45 @@ const CATEGORIES: { name: string; href?: string; note?: string }[] = [
   { name: "Uniform Information", href: "https://www.scouting.org/programs/cub-scouts/cub-scout-uniform/" },
   { name: "Youth Protection Information", href: "https://www.scouting.org/training/safeguarding-youth/" },
   { name: "Payment Links", href: "https://venmo.com/u/CubScoutPack786" },
-  { name: "Frequently Asked Questions" },
+];
+
+const FAQ = [
+  {
+    q: "How do I register my Scout each year?",
+    a: "Register online through my.scouting.org. New Scouts: $110 (covers $85 BSA registration + a $25 one-time joining fee). Returning Scouts: $85 (BSA registration only). Adult leaders/volunteers: $60.",
+  },
+  {
+    q: "What are pack dues, and how do I pay them?",
+    a: "$40 per year per Scout, covering pack supplies and activities. Pay via Venmo (@CubScoutPack786), cash, or check payable to “Cub Scout Pack 786” with your Scout’s name in the memo.",
+  },
+  {
+    q: "When and where do meetings happen?",
+    a: "The full pack meets the 1st Tuesday of every month, 6:00–7:30 PM, at Aspen View Academy. Individual dens coordinate their own additional meetings separately.",
+  },
+  {
+    q: "Do we have to attend Aspen View Academy to join?",
+    a: "No. Pack 786 is open to any family with a boy in kindergarten through 5th grade, regardless of which school they attend.",
+  },
+  {
+    q: "What if we can't afford the fees?",
+    a: "Financial assistance is available — no family should miss out on Scouting due to cost. Reach out confidentially at cubscoutpack786crco@gmail.com.",
+  },
+  {
+    q: "What's the policy on medical forms for camping trips?",
+    a: "The BSA Annual Health and Medical Record must be brought to every camping event. It's returned at the end of the trip, or destroyed at your request.",
+  },
+  {
+    q: "How do we stay updated on pack news and events?",
+    a: "Join our Discord server and Facebook group — that's where announcements, schedule changes, and reminders get posted.",
+  },
+  {
+    q: "Is Pack 786 open to girls?",
+    a: "Pack 786 is chartered as a boys-only (non-coed) Cub Scout pack. Parents/guardians and volunteers of any gender are welcome and encouraged to participate.",
+  },
+  {
+    q: "Who do I contact with questions?",
+    a: "Cubmaster Kyle Barnes or Committee Chair Colby Young — both reachable at cubscoutpack786crco@gmail.com.",
+  },
 ];
 
 export default function FamiliesPage() {
@@ -51,6 +89,18 @@ export default function FamiliesPage() {
         Venmo: <strong><a href="https://venmo.com/u/CubScoutPack786" target="_blank" rel="noopener noreferrer" className="underline">@CubScoutPack786</a></strong>
         {" "}&middot;{" "}
         Council registration: <strong><a href="https://my.scouting.org/online-registration/332f87fe-00a5-4a5d-bf56-1d50340780cb/applicant-type" target="_blank" rel="noopener noreferrer" className="underline">Register online</a></strong>
+      </div>
+
+      <div className="trail-divider" />
+
+      <h2 className="font-display text-2xl font-bold text-trail-blue">Frequently Asked Questions</h2>
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        {FAQ.map((item) => (
+          <div key={item.q} className="card">
+            <p className="font-display font-bold text-trail-blue">{item.q}</p>
+            <p className="mt-1 text-sm text-trail-ink/70">{item.a}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
