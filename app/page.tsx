@@ -1,7 +1,20 @@
+import fs from "node:fs";
+import path from "node:path";
 import Image from "next/image";
 import Link from "next/link";
 import EventCard from "@/components/EventCard";
 import { getFeaturedEvents, getUpcomingEvents } from "@/lib/events";
+
+function getGalleryPreviewPhotos(count: number): string[] {
+  const dir = path.join(process.cwd(), "public", "media", "photos");
+  const files = fs.readdirSync(dir).filter((f) => /\.(jpe?g|png|webp)$/i.test(f));
+  const step = Math.max(1, Math.floor(files.length / count));
+  return files
+    .sort()
+    .filter((_, i) => i % step === 0)
+    .slice(0, count)
+    .map((f) => `/media/photos/${f}`);
+}
 
 const WHAT_WE_DO = [
   { title: "Camping & Outdoor Adventures", desc: "Family campouts that build real outdoor skills.", icon: "⛺" },
@@ -16,6 +29,7 @@ export default async function HomePage() {
   const featured = (await getFeaturedEvents()).slice(0, 3);
   const upcoming = await getUpcomingEvents(3);
   const spotlight = featured.length ? featured : upcoming;
+  const galleryPreview = getGalleryPreviewPhotos(4);
 
   return (
     <>
@@ -134,9 +148,15 @@ export default async function HomePage() {
       <section className="mx-auto max-w-6xl px-4 py-16">
         <h2 className="font-display text-3xl font-bold text-trail-blue">From the Trail</h2>
         <div className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4">
-          {[1, 2, 3, 4].map((i) => (
-            <div key={i} className="aspect-square rounded-trail bg-trail-green/10 flex items-center justify-center text-xs text-trail-ink/50">
-              [ Approved photo {i} ]
+          {galleryPreview.map((src) => (
+            <div key={src} className="relative aspect-square overflow-hidden rounded-trail bg-trail-green/10">
+              <Image
+                src={src}
+                alt="Pack 786 event photo"
+                fill
+                sizes="(min-width: 768px) 25vw, 50vw"
+                className="object-cover"
+              />
             </div>
           ))}
         </div>

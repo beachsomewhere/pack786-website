@@ -1,10 +1,21 @@
+import fs from "node:fs";
+import path from "node:path";
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = { title: "Gallery" };
 
 const CATEGORIES = ["Camping", "Pinewood Derby", "Hiking", "Service Projects", "Pack Meetings", "Ceremonies", "Summer Activities"];
 
+function getGalleryPhotos(): string[] {
+  const dir = path.join(process.cwd(), "public", "media", "photos");
+  const files = fs.readdirSync(dir).filter((f) => /\.(jpe?g|png|webp)$/i.test(f));
+  return files.sort().map((f) => `/media/photos/${f}`);
+}
+
 export default function GalleryPage() {
+  const photos = getGalleryPhotos();
+
   return (
     <div className="mx-auto max-w-6xl px-4 py-16">
       <p className="eyebrow">See Us in Action</p>
@@ -19,10 +30,22 @@ export default function GalleryPage() {
       </div>
 
       <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4">
-        {Array.from({ length: 8 }).map((_, i) => (
-          <div key={i} className="aspect-square rounded-trail bg-trail-green/10 flex items-center justify-center text-xs text-trail-ink/50">
-            [ Approved photo {i + 1} ]
-          </div>
+        {photos.map((src) => (
+          <a
+            key={src}
+            href={src}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative aspect-square overflow-hidden rounded-trail bg-trail-green/10"
+          >
+            <Image
+              src={src}
+              alt="Pack 786 event photo"
+              fill
+              sizes="(min-width: 768px) 25vw, 50vw"
+              className="object-cover transition hover:scale-105"
+            />
+          </a>
         ))}
       </div>
 
