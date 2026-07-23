@@ -5,10 +5,10 @@ import RecruitmentForm from "@/components/RecruitmentForm";
 export const metadata: Metadata = { title: "Join Pack 786" };
 
 const FAQ = [
-  { q: "Who can join?", a: "Kids from kindergarten through 5th grade, along with their families." },
+  { q: "Who can join?", a: "Boys from kindergarten through 5th grade, along with their families. Pack 786 is chartered as a boys-only (non-coed) Cub Scout pack." },
   { q: "What do Cub Scouts do?", a: "Camping, hiking, service projects, Pinewood Derby, STEM activities, and monthly pack meetings." },
   { q: "How much time does it take?", a: "Most families attend one den meeting and one pack meeting per month, plus optional weekend adventures." },
-  { q: "How often do you meet?", a: "Weekly or monthly den meetings, plus a pack-wide meeting most months — see [MEETING SCHEDULE]." },
+  { q: "How often do you meet?", a: "Weekly or monthly den meetings, plus a pack-wide meeting on the 1st Tuesday of every month, 6:00–7:30 PM." },
   { q: "How involved do parents need to be?", a: "Cub Scouting is a family program. Parents attend with their Scout, and many pitch in on events — no prior Scouting experience needed." },
   { q: "What about uniforms and handbooks?", a: "Each Scout wears a Cub Scout uniform and receives a rank handbook, available through local Scouting retailers or online." },
 ];
@@ -44,13 +44,19 @@ export default function JoinPage() {
         <div className="card">
           <p className="font-display font-bold text-trail-blue">Estimated Annual Costs</p>
           <ul className="mt-2 space-y-1 text-sm text-trail-ink/70">
-            <li>Joining fee: <strong>[JOINING FEE]</strong></li>
-            <li>Annual dues: <strong>[ANNUAL DUES]</strong></li>
-            <li>Council registration: <strong>[COUNCIL REGISTRATION LINK]</strong></li>
+            <li>New Scout: <strong>$110</strong> paid online (BSA registration $85 + one-time joining fee $25)</li>
+            <li>Returning Scout: <strong>$85</strong> paid online (BSA registration only)</li>
+            <li>Adult leaders/volunteers: <strong>$60</strong> paid online (BSA registration only)</li>
+            <li>
+              Pack dues/supply fee: <strong>$40/year</strong>, paid to the pack via cash, Venmo
+              (<a href="https://venmo.com/u/CubScoutPack786" target="_blank" rel="noopener noreferrer" className="underline">@CubScoutPack786</a>),
+              or check payable to &ldquo;Cub Scout Pack 786&rdquo; with your Scout&rsquo;s name in the memo
+            </li>
           </ul>
           <p className="mt-3 text-sm text-trail-ink/70">
             Financial assistance is available — no family should miss out on Scouting due to cost.
-            Contact us confidentially at <strong>[PACK EMAIL]</strong>.
+            Contact us confidentially at{" "}
+            <a href="mailto:cubscoutpack786crco@gmail.com" className="underline">cubscoutpack786crco@gmail.com</a>.
           </p>
         </div>
         <div className="card">

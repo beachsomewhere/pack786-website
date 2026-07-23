@@ -108,7 +108,10 @@ export default function VolunteerForm() {
       </button>
 
       {status === "error" && (
-        <p className="text-sm text-red-700">Something went wrong. Please try again or email [PACK EMAIL].</p>
+        <p className="text-sm text-red-700">
+          Something went wrong. Please try again or email{" "}
+          <a href="mailto:cubscoutpack786crco@gmail.com" className="underline">cubscoutpack786crco@gmail.com</a>.
+        </p>
       )}
     </form>
   );

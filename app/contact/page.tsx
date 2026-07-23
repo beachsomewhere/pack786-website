@@ -12,14 +12,50 @@ export default function ContactPage() {
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         <div className="card">
           <p className="font-display font-bold text-trail-blue">Pack Leadership</p>
-          <p className="mt-1 text-sm text-trail-ink/70">Cubmaster: [PACK EMAIL]</p>
-          <p className="text-sm text-trail-ink/70">Committee Chair: [PACK EMAIL]</p>
+          <p className="mt-1 text-sm text-trail-ink/70">
+            Kyle Barnes, Cubmaster &middot;{" "}
+            <a href="mailto:cubscoutpack786crco@gmail.com" className="hover:underline">
+              cubscoutpack786crco@gmail.com
+            </a>{" "}
+            &middot; 720-320-9648
+          </p>
+          <p className="mt-2 text-sm text-trail-ink/70">
+            Colby Young, Committee Chair &middot;{" "}
+            <a href="mailto:cubscoutpack786crco@gmail.com" className="hover:underline">
+              cubscoutpack786crco@gmail.com
+            </a>{" "}
+            &middot; 619-335-6733
+          </p>
         </div>
         <div className="card">
           <p className="font-display font-bold text-trail-blue">Meetings</p>
-          <p className="mt-1 text-sm text-trail-ink/70">[MEETING LOCATION]</p>
-          <p className="text-sm text-trail-ink/70">[MEETING SCHEDULE]</p>
+          <p className="mt-1 text-sm text-trail-ink/70">Aspen View Academy</p>
+          <p className="text-sm text-trail-ink/70">1st Tuesday of every month, 6:00&ndash;7:30 PM</p>
         </div>
+      </div>
+
+      <div className="mt-4 card flex flex-col items-center gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="font-display font-bold text-trail-blue">Join Us on Discord</p>
+          <p className="mt-1 text-sm text-trail-ink/70">
+            Pack announcements and family chat happen on our Discord server.
+          </p>
+          <a
+            href="https://discord.gg/tBC9TtpsDq"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-block btn-secondary"
+          >
+            Join our Discord
+          </a>
+        </div>
+        <img
+          src="/media/discord-qr.png"
+          alt="QR code to join the Pack 786 Discord server"
+          width={128}
+          height={128}
+          className="rounded-trail"
+        />
       </div>
 
       <form className="card mt-8 grid gap-4" noValidate>

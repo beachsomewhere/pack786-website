@@ -38,7 +38,9 @@ export default function FamiliesPage() {
       </div>
 
       <div className="mt-10 card bg-trail-blue/5 text-sm text-trail-ink/70">
-        Payment link: <strong>[PAYMENT LINK]</strong> &middot; Council registration: <strong>[COUNCIL REGISTRATION LINK]</strong>
+        Venmo: <strong><a href="https://venmo.com/u/CubScoutPack786" target="_blank" rel="noopener noreferrer" className="underline">@CubScoutPack786</a></strong>
+        {" "}&middot;{" "}
+        Council registration: <strong><a href="https://my.scouting.org" target="_blank" rel="noopener noreferrer" className="underline">my.scouting.org</a></strong>
       </div>
     </div>
   );

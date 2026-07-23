@@ -73,7 +73,8 @@ export default function RecruitmentForm() {
 
       {status === "error" && (
         <p className="text-sm text-red-700">
-          Something went wrong sending your request. Please try again or email [PACK EMAIL] directly.
+          Something went wrong sending your request. Please try again or email{" "}
+          <a href="mailto:cubscoutpack786crco@gmail.com" className="underline">cubscoutpack786crco@gmail.com</a> directly.
         </p>
       )}
     </form>

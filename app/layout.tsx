@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: "%s | Pack 786",
   },
   description:
-    "Cub Scout Pack 786 — camping, Pinewood Derby, community service, and family adventure for kids in [CITY]. Cub Scouts near me, Scouting for elementary students.",
+    "Cub Scout Pack 786 — camping, Pinewood Derby, community service, and family adventure for kids in Castle Rock, CO. Cub Scouts near me, Scouting for elementary students.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -27,8 +27,11 @@ export default function AboutPage() {
           small-group &ldquo;den&rdquo; meetings, monthly pack-wide events, and outdoor adventures throughout the
           year — camping trips, service projects, Pinewood Derby, and more.
         </p>
+        <p className="text-sm text-trail-ink/60">
+          Note: Pack 786 is chartered as a boys-only (non-coed) Cub Scout pack.
+        </p>
         <p>
-          We meet at <strong>[MEETING LOCATION]</strong> on <strong>[MEETING SCHEDULE]</strong>. Families are
+          We meet at <strong>Aspen View Academy</strong> on the <strong>1st Tuesday of every month, 6:00&ndash;7:30 PM</strong>. Families are
           always welcome to visit a meeting before deciding to join.
         </p>
       </section>
@@ -68,11 +71,11 @@ export default function AboutPage() {
         <h2 className="font-display text-2xl font-bold text-trail-blue">Pack Leadership</h2>
         <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <div className="card">
-            <p className="font-display font-bold">[PACK LEADER NAME]</p>
+            <p className="font-display font-bold">Kyle Barnes</p>
             <p className="text-sm text-trail-ink/60">Cubmaster</p>
           </div>
           <div className="card">
-            <p className="font-display font-bold">[PACK LEADER NAME]</p>
+            <p className="font-display font-bold">Colby Young</p>
             <p className="text-sm text-trail-ink/60">Committee Chair</p>
           </div>
         </div>

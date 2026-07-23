@@ -7,9 +7,13 @@ export default function Footer() {
         <div>
           <p className="font-display text-lg font-bold">Cub Scout Pack 786</p>
           <p className="mt-2 text-sm text-trail-bg/80">
-            [MEETING LOCATION] &middot; [MEETING SCHEDULE]
+            Aspen View Academy &middot; 1st Tuesday of every month, 6:00&ndash;7:30 PM
           </p>
-          <p className="mt-2 text-sm text-trail-bg/80">[PACK EMAIL]</p>
+          <p className="mt-2 text-sm text-trail-bg/80">
+            <a href="mailto:cubscoutpack786crco@gmail.com" className="hover:underline">
+              cubscoutpack786crco@gmail.com
+            </a>
+          </p>
         </div>
 
         <nav aria-label="Footer">
@@ -26,7 +30,28 @@ export default function Footer() {
 
         <div>
           <p className="eyebrow text-trail-gold">Follow along</p>
-          <p className="mt-3 text-sm text-trail-bg/80">[SOCIAL MEDIA LINKS]</p>
+          <ul className="mt-3 space-y-2 text-sm text-trail-bg/80">
+            <li>
+              <a
+                href="https://www.facebook.com/groups/cubscoutpack786"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Facebook Group
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://discord.gg/tBC9TtpsDq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:underline"
+              >
+                Discord
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
       <div className="border-t border-white/10 px-4 py-4 text-center text-xs text-trail-bg/60">
