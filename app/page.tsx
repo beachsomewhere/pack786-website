@@ -56,8 +56,9 @@ export default async function HomePage() {
       <section className="mx-auto max-w-3xl px-4 py-16 text-center">
         <p className="eyebrow">Who we are</p>
         <p className="mt-3 text-lg text-trail-ink/80">
-          Pack 786 is a family-oriented Cub Scout pack for elementary-aged kids and their families. No
-          Scouting experience required — just a willingness to get outside, try new things, and pitch in
+          Pack 786 is a family-oriented, boys-only (non-coed) Cub Scout pack for elementary-aged boys and
+          their families. Parents and volunteers of any gender are welcome and encouraged to get involved.
+          No Scouting experience required — just a willingness to get outside, try new things, and pitch in
           where you can.
         </p>
       </section>
