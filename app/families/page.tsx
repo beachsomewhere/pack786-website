@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Family Resources" };
 
-const CATEGORIES = [
-  "New Family Information",
-  "Annual Calendar",
-  "Pack Handbook",
-  "Medical Forms",
-  "Permission Forms",
-  "Camping Packing Lists",
-  "Uniform Information",
-  "Advancement Resources",
-  "Youth Protection Information",
-  "Payment Links",
-  "Reimbursement Forms",
-  "Leader Resources",
-  "Frequently Asked Questions",
+const CATEGORIES: { name: string; href?: string }[] = [
+  { name: "New Family Information" },
+  { name: "Annual Calendar" },
+  { name: "Pack Handbook" },
+  { name: "Medical Forms", href: "https://filestore.scouting.org/filestore/healthsafety/pdf/680-001_ab.pdf" },
+  { name: "Permission Forms" },
+  { name: "Camping Packing Lists" },
+  { name: "Uniform Information", href: "https://www.scouting.org/programs/cub-scouts/cub-scout-uniform/" },
+  { name: "Advancement Resources" },
+  { name: "Youth Protection Information", href: "https://www.scouting.org/training/safeguarding-youth/" },
+  { name: "Payment Links", href: "https://venmo.com/u/CubScoutPack786" },
+  { name: "Reimbursement Forms" },
+  { name: "Leader Resources" },
+  { name: "Frequently Asked Questions" },
 ];
 
 export default function FamiliesPage() {
@@ -30,9 +30,20 @@ export default function FamiliesPage() {
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {CATEGORIES.map((cat) => (
-          <div key={cat} className="card flex items-center justify-between">
-            <p className="font-display font-medium text-trail-blue">{cat}</p>
-            <span className="text-xs text-trail-ink/40">[ documents to be uploaded ]</span>
+          <div key={cat.name} className="card flex items-center justify-between">
+            <p className="font-display font-medium text-trail-blue">{cat.name}</p>
+            {cat.href ? (
+              <a
+                href={cat.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-semibold text-trail-blue underline"
+              >
+                View
+              </a>
+            ) : (
+              <span className="text-xs text-trail-ink/40">[ documents to be uploaded ]</span>
+            )}
           </div>
         ))}
       </div>
