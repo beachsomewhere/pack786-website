@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+  }
+  :focus-visible {
+    outline: 3px solid #D9A441;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-trail-gold px-6 py-3 font-display font-semibold text-trail-blue-dark transition hover:bg-trail-gold-dark hover:text-white;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border-2 border-trail-blue px-6 py-3 font-display font-semibold text-trail-blue transition hover:bg-trail-blue hover:text-white;
+  }
+  .card {
+    @apply rounded-trail border border-trail-line bg-white p-6 shadow-sm;
+  }
+  .trail-divider {
+    @apply relative my-12 h-px w-full bg-trail-line;
+  }
+  .eyebrow {
+    @apply font-display text-sm font-semibold uppercase tracking-widest text-trail-green;
+  }
+}
