@@ -27,6 +27,10 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
     a: "Each Scout's neckerchief and slide, plus their Scout handbook.",
   },
   {
+    q: "When are uniforms required?",
+    a: "During all pack meetings and events. They are not required for den meetings.",
+  },
+  {
     q: "How are pack events paid for?",
     a: "A mix of Butterbraid fundraiser sales and family contributions covers the cost of pack events.",
   },
