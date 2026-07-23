@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -18,8 +19,9 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-trail-line bg-trail-bg/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
-        <Link href="/" className="font-display text-lg font-bold text-trail-blue">
-          Cub Scout Pack 786 <span className="text-trail-gold-dark">🏕️</span>
+        <Link href="/" className="flex items-center gap-2 font-display text-lg font-bold text-trail-blue">
+          Cub Scout Pack 786
+          <Image src="/media/cub-scout-logo.png" alt="" width={28} height={28} aria-hidden="true" />
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
