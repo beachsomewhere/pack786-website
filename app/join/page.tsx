@@ -58,6 +58,14 @@ export default function JoinPage() {
             Contact us confidentially at{" "}
             <a href="mailto:cubscoutpack786crco@gmail.com" className="underline">cubscoutpack786crco@gmail.com</a>.
           </p>
+          <a
+            href="https://my.scouting.org/online-registration/332f87fe-00a5-4a5d-bf56-1d50340780cb/applicant-type"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-block btn-primary"
+          >
+            Register Online
+          </a>
         </div>
         <div className="card">
           <p className="font-display font-bold text-trail-blue">Your First Meeting</p>

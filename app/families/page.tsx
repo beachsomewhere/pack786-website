@@ -40,7 +40,7 @@ export default function FamiliesPage() {
       <div className="mt-10 card bg-trail-blue/5 text-sm text-trail-ink/70">
         Venmo: <strong><a href="https://venmo.com/u/CubScoutPack786" target="_blank" rel="noopener noreferrer" className="underline">@CubScoutPack786</a></strong>
         {" "}&middot;{" "}
-        Council registration: <strong><a href="https://my.scouting.org" target="_blank" rel="noopener noreferrer" className="underline">my.scouting.org</a></strong>
+        Council registration: <strong><a href="https://my.scouting.org/online-registration/332f87fe-00a5-4a5d-bf56-1d50340780cb/applicant-type" target="_blank" rel="noopener noreferrer" className="underline">Register online</a></strong>
       </div>
     </div>
   );
