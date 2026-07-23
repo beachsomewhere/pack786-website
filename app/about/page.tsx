@@ -3,12 +3,12 @@ import type { Metadata } from "next";
 export const metadata: Metadata = { title: "About Pack 786" };
 
 const DENS = [
-  { name: "Lion", grade: "Kindergarten" },
-  { name: "Tiger", grade: "1st Grade" },
-  { name: "Wolf", grade: "2nd Grade" },
-  { name: "Bear", grade: "3rd Grade" },
-  { name: "Webelos", grade: "4th Grade" },
-  { name: "Arrow of Light", grade: "5th Grade" },
+  { name: "Lion", grade: "Kindergarten", icon: "🦁" },
+  { name: "Tiger", grade: "1st Grade", icon: "🐯" },
+  { name: "Wolf", grade: "2nd Grade", icon: "🐺" },
+  { name: "Bear", grade: "3rd Grade", icon: "🐻" },
+  { name: "Webelos", grade: "4th Grade", icon: "🧭" },
+  { name: "Arrow of Light", grade: "5th Grade", icon: "🏹" },
 ];
 
 export default function AboutPage() {
@@ -47,7 +47,8 @@ export default function AboutPage() {
         <div className="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3">
           {DENS.map((den) => (
             <div key={den.name} className="card text-center">
-              <p className="font-display font-bold text-trail-blue">{den.name}</p>
+              <span className="text-3xl">{den.icon}</span>
+              <p className="mt-2 font-display font-bold text-trail-blue">{den.name}</p>
               <p className="text-sm text-trail-ink/60">{den.grade}</p>
             </div>
           ))}
