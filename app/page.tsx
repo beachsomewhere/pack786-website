@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import EventCard from "@/components/EventCard";
 import { getFeaturedEvents, getUpcomingEvents } from "@/lib/events";
@@ -37,8 +38,15 @@ export default async function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="aspect-[4/3] rounded-trail bg-white/10 flex items-center justify-center text-white/60 text-sm">
-            [ Hero photo: Scouts on an outdoor / group activity ]
+          <div className="relative aspect-[4/3] overflow-hidden rounded-trail">
+            <Image
+              src="/media/homepage.jpg"
+              alt="Pack 786 scouts on an outdoor adventure"
+              fill
+              priority
+              className="object-cover"
+              sizes="(min-width: 768px) 50vw, 100vw"
+            />
           </div>
         </div>
       </section>
