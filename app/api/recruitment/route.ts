@@ -33,6 +33,40 @@ export async function POST(req: NextRequest) {
 
   // Not persisted yet — logging only until the database is connected.
   console.log("New recruitment inquiry (not yet persisted):", inquiry.id);
+  await notifyDiscord(inquiry);
 
   return NextResponse.json({ ok: true });
+}
+
+async function notifyDiscord(inquiry: RecruitmentInquiry) {
+  const webhookUrl = process.env.DISCORD_RECRUITMENT_WEBHOOK_URL;
+  if (!webhookUrl) return;
+
+  try {
+    await fetch(webhookUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        embeds: [
+          {
+            title: "New Recruitment Inquiry",
+            color: 0x1c3d5a,
+            fields: [
+              { name: "Parent/Guardian", value: inquiry.guardianName || "—", inline: true },
+              { name: "Email", value: inquiry.email || "—", inline: true },
+              { name: "Phone", value: inquiry.phone || "—", inline: true },
+              { name: "Preferred Contact", value: inquiry.preferredContact || "—", inline: true },
+              { name: "Child's Name", value: inquiry.childName || "—", inline: true },
+              { name: "Child's Grade", value: inquiry.childGrade || "—", inline: true },
+              { name: "Child's School", value: inquiry.childSchool || "—", inline: true },
+              { name: "Questions/Comments", value: inquiry.message || "—" },
+            ],
+            timestamp: inquiry.submittedAt,
+          },
+        ],
+      }),
+    });
+  } catch (err) {
+    console.error("Failed to notify Discord for recruitment inquiry:", err);
+  }
 }
