@@ -3,18 +3,10 @@ import type { Metadata } from "next";
 export const metadata: Metadata = { title: "Family Resources" };
 
 const CATEGORIES: { name: string; href?: string }[] = [
-  { name: "New Family Information" },
-  { name: "Annual Calendar" },
-  { name: "Pack Handbook" },
   { name: "Medical Forms", href: "https://filestore.scouting.org/filestore/healthsafety/pdf/680-001_ab.pdf" },
-  { name: "Permission Forms" },
-  { name: "Camping Packing Lists" },
   { name: "Uniform Information", href: "https://www.scouting.org/programs/cub-scouts/cub-scout-uniform/" },
-  { name: "Advancement Resources" },
   { name: "Youth Protection Information", href: "https://www.scouting.org/training/safeguarding-youth/" },
   { name: "Payment Links", href: "https://venmo.com/u/CubScoutPack786" },
-  { name: "Reimbursement Forms" },
-  { name: "Leader Resources" },
   { name: "Frequently Asked Questions" },
 ];
 
