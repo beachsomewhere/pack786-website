@@ -74,6 +74,10 @@ export default async function HomePage() {
             Pack meetings are held on the 1st Tuesday of every month, 6:00&ndash;7:30 PM, at Aspen View
             Academy. Families are always welcome to stop by.
           </p>
+          <p className="mx-auto mt-2 max-w-2xl text-sm font-semibold text-trail-blue">
+            You do not need to attend AVA to join — Pack 786 is open to all boys in the Cub Scout age
+            range (kindergarten&ndash;5th grade), regardless of school.
+          </p>
           <a
             href="https://www.google.com/maps/search/?api=1&query=Aspen+View+Academy+Castle+Rock+CO"
             target="_blank"
