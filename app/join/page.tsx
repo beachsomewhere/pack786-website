@@ -8,7 +8,7 @@ const FAQ = [
   { q: "Who can join?", a: "Boys from kindergarten through 5th grade, along with their families. Pack 786 is chartered as a boys-only (non-coed) Cub Scout pack." },
   { q: "What do Cub Scouts do?", a: "Camping, hiking, service projects, Pinewood Derby, STEM activities, and monthly pack meetings." },
   { q: "How much time does it take?", a: "Most families attend one den meeting and one pack meeting per month, plus optional weekend adventures." },
-  { q: "How often do you meet?", a: "Weekly or monthly den meetings, plus a pack-wide meeting on the 1st Tuesday of every month, 6:00–7:30 PM." },
+  { q: "How often do you meet?", a: "The pack meeting is monthly — 1st Tuesday of every month, 6:00–7:30 PM at Aspen View Academy. Each grade-specific den also coordinates its own den meetings separately." },
   { q: "How involved do parents need to be?", a: "Cub Scouting is a family program. Parents attend with their Scout, and many pitch in on events — no prior Scouting experience needed." },
   { q: "What about uniforms and handbooks?", a: "Each Scout wears a Cub Scout uniform and receives a rank handbook, available through local Scouting retailers or online." },
 ];
