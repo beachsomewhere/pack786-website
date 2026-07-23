@@ -20,7 +20,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-trail-line bg-trail-bg/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
         <Link href="/" className="font-display text-lg font-bold text-trail-blue">
-          Pack 786 <span className="text-trail-gold-dark">🏕️</span>
+          Cub Scout Pack 786 <span className="text-trail-gold-dark">🏕️</span>
         </Link>
 
         <nav className="hidden items-center gap-6 lg:flex" aria-label="Primary">
@@ -30,7 +30,7 @@ export default function Header() {
             </Link>
           ))}
           <Link href="/join" className="btn-primary">
-            Join Pack 786
+            Join Cub Scout Pack 786
           </Link>
         </nav>
 
@@ -64,7 +64,7 @@ export default function Header() {
             ))}
             <li>
               <Link href="/join" className="btn-primary mt-2 w-full" onClick={() => setOpen(false)}>
-                Join Pack 786
+                Join Cub Scout Pack 786
               </Link>
             </li>
           </ul>
