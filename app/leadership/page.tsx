@@ -2,17 +2,15 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Leadership" };
 
-const PACK_EMAIL = "cubscoutpack786crco@gmail.com";
-
 const LEADERS = [
-  { name: "Kyle Barnes", role: "Cubmaster" },
-  { name: "Colby Young", role: "Committee Chair" },
-  { name: "Tiffany Reyes", role: "Treasurer" },
-  { name: "Sarah Humbargar", role: "Recruitment Chair" },
-  { name: "Daniel McElwaine", role: "Webelos Den Leader" },
-  { name: "Dan Shehan", role: "Bears Den Leader" },
-  { name: "Matt Finuf", role: "Bears Den Leader" },
-  { name: "Ryan Means", role: "Tigers/Lions Den Leader" },
+  { name: "Kyle Barnes", role: "Cubmaster", email: "kylecbarnes@gmail.com" },
+  { name: "Colby Young", role: "Committee Chair", email: "colbypyoung@gmail.com" },
+  { name: "Tiffany Reyes", role: "Treasurer", email: "tandbreyes@me.com" },
+  { name: "Sarah Humbargar", role: "Recruitment Chair", email: "sarah.humbargar@gmail.com" },
+  { name: "Daniel McElwaine", role: "Webelos Den Leader", email: "Disco73@msn.com" },
+  { name: "Dan Shehan", role: "Bears Den Leader", email: "shehandn@gmail.com" },
+  { name: "Matt Finuf", role: "Bears Den Leader", email: "matt.finuf@gmail.com" },
+  { name: "Ryan Means", role: "Tigers/Lions Den Leader", email: "ryan@means.tech" },
 ];
 
 function initials(name: string) {
@@ -40,8 +38,8 @@ export default function LeadershipPage() {
             </div>
             <p className="mt-4 font-display font-bold text-trail-blue">{leader.name}</p>
             <p className="text-sm text-trail-ink/60">{leader.role}</p>
-            <a href={`mailto:${PACK_EMAIL}`} className="mt-2 inline-block text-sm underline">
-              {PACK_EMAIL}
+            <a href={`mailto:${leader.email}`} className="mt-2 inline-block text-sm underline">
+              {leader.email}
             </a>
           </div>
         ))}
