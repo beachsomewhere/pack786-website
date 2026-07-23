@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = { title: "Contact" };
 
@@ -58,21 +59,7 @@ export default function ContactPage() {
         />
       </div>
 
-      <form className="card mt-8 grid gap-4" noValidate>
-        <label className="grid gap-1 text-sm font-medium">
-          Name
-          <input name="name" required className="rounded-xl border border-trail-line p-3" />
-        </label>
-        <label className="grid gap-1 text-sm font-medium">
-          Email
-          <input name="email" type="email" required className="rounded-xl border border-trail-line p-3" />
-        </label>
-        <label className="grid gap-1 text-sm font-medium">
-          Message
-          <textarea name="message" rows={4} required className="rounded-xl border border-trail-line p-3" />
-        </label>
-        <button type="submit" className="btn-primary">Send Message</button>
-      </form>
+      <ContactForm />
 
       <p className="mt-8 text-center text-trail-ink/70">
         Prefer to see us in person? <Link href="/events" className="font-semibold text-trail-blue underline">Come to an upcoming meeting.</Link>
