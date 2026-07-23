@@ -16,6 +16,10 @@
 # claude code local settings
 .claude/settings.local.json
 
+# photos awaiting parent/guardian photo-release waivers — kept locally only,
+# never committed (this repo is public)
+/media-pending-consent/
+
 # misc
 .DS_Store
 *.pem
