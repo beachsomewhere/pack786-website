@@ -33,20 +33,17 @@ export async function POST(req: NextRequest) {
 
   // Not persisted yet — logging only until the database is connected.
   console.log("New recruitment inquiry (not yet persisted):", inquiry.id);
-  const discordDebug = await notifyDiscord(inquiry);
+  await notifyDiscord(inquiry);
 
-  // TEMPORARY: discordDebug exposes only booleans/status codes (never the
-  // webhook URL itself) to help diagnose why production isn't notifying.
-  // Remove once confirmed working.
-  return NextResponse.json({ ok: true, discordDebug });
+  return NextResponse.json({ ok: true });
 }
 
 async function notifyDiscord(inquiry: RecruitmentInquiry) {
   const webhookUrl = process.env.DISCORD_RECRUITMENT_WEBHOOK_URL;
-  if (!webhookUrl) return { configured: false };
+  if (!webhookUrl) return;
 
   try {
-    const res = await fetch(webhookUrl, {
+    await fetch(webhookUrl, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -69,9 +66,7 @@ async function notifyDiscord(inquiry: RecruitmentInquiry) {
         ],
       }),
     });
-    return { configured: true, discordStatus: res.status };
   } catch (err) {
     console.error("Failed to notify Discord for recruitment inquiry:", err);
-    return { configured: true, error: String(err) };
   }
 }
