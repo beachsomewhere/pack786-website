@@ -10,7 +10,7 @@ const FAQ = [
   { q: "How much time does it take?", a: "Most families attend one den meeting and one pack meeting per month, plus optional weekend adventures." },
   { q: "How often do you meet?", a: "The pack meeting is monthly — 1st Tuesday of every month, 6:00–7:30 PM at Aspen View Academy. Each grade-specific den also coordinates its own den meetings separately." },
   { q: "How involved do parents need to be?", a: "Cub Scouting is a family program. Parents attend with their Scout, and many pitch in on events — no prior Scouting experience needed." },
-  { q: "What about uniforms and handbooks?", a: "Each Scout wears a Cub Scout uniform and receives a rank handbook, available through local Scouting retailers or online." },
+  { q: "What about uniforms and handbooks?", a: "Each Scout wears a Cub Scout uniform and receives a rank handbook, available at the Denver Scout Shop (10455 W 6th Ave #125, Denver, CO 80215 · 303-477-4829) or the Hibbard Memorial Scout Shop (985 W Fillmore St, Colorado Springs, CO 80907 · 719-634-4342), or online." },
 ];
 
 export default function JoinPage() {

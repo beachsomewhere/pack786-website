@@ -8,7 +8,11 @@ const CATEGORIES: { name: string; href?: string; note?: string }[] = [
     href: "https://filestore.scouting.org/filestore/healthsafety/pdf/680-001_ab.pdf",
     note: "Must be provided at each camping event. Forms are returned at the end of the event, or destroyed at the individual's request.",
   },
-  { name: "Uniform Information", href: "https://www.scouting.org/programs/cub-scouts/cub-scout-uniform/" },
+  {
+    name: "Uniform Information",
+    href: "https://www.scouting.org/programs/cub-scouts/cub-scout-uniform/",
+    note: "Available at the Denver Scout Shop (10455 W 6th Ave #125, Denver, CO 80215 · 303-477-4829) or the Hibbard Memorial Scout Shop (985 W Fillmore St, Colorado Springs, CO 80907 · 719-634-4342).",
+  },
   { name: "Youth Protection Information", href: "https://www.scouting.org/training/safeguarding-youth/" },
   { name: "Payment Links", href: "https://venmo.com/u/CubScoutPack786" },
 ];
@@ -29,6 +33,10 @@ const FAQ: { q: string; a: React.ReactNode }[] = [
   {
     q: "When are uniforms required?",
     a: "During all pack meetings and events. They are not required for den meetings.",
+  },
+  {
+    q: "Where can I buy a uniform?",
+    a: "The Denver Scout Shop (10455 W 6th Ave #125, Denver, CO 80215 · 303-477-4829) or the Hibbard Memorial Scout Shop (985 W Fillmore St, Colorado Springs, CO 80907 · 719-634-4342).",
   },
   {
     q: "How are pack events paid for?",
