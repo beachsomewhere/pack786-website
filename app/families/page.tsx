@@ -13,7 +13,7 @@ const CATEGORIES: { name: string; href?: string; note?: string }[] = [
   { name: "Payment Links", href: "https://venmo.com/u/CubScoutPack786" },
 ];
 
-const FAQ = [
+const FAQ: { q: string; a: React.ReactNode }[] = [
   {
     q: "How do I register my Scout each year?",
     a: "Register online through my.scouting.org. New Scouts: $110 (covers $85 BSA registration + a $25 one-time joining fee). Returning Scouts: $85 (BSA registration only). Adult leaders/volunteers: $60.",
@@ -21,6 +21,14 @@ const FAQ = [
   {
     q: "What are pack dues, and how do I pay them?",
     a: "$40 per year per Scout, covering pack supplies and activities. Pay via Venmo (@CubScoutPack786), cash, or check payable to “Cub Scout Pack 786” with your Scout’s name in the memo.",
+  },
+  {
+    q: "What do pack dues go towards?",
+    a: "Each Scout's neckerchief and slide, plus their Scout handbook.",
+  },
+  {
+    q: "How are pack events paid for?",
+    a: "A mix of Butterbraid fundraiser sales and family contributions covers the cost of pack events.",
   },
   {
     q: "When and where do meetings happen?",
@@ -39,12 +47,37 @@ const FAQ = [
     a: "The BSA Annual Health and Medical Record must be brought to every camping event. It's returned at the end of the trip, or destroyed at your request.",
   },
   {
+    q: "Can siblings come camping too?",
+    a: "Yes! Cub Scouting is very family-focused, and we support and encourage sibling involvement — with the appropriate medical health forms filled out for each participant.",
+  },
+  {
+    q: "How do I keep track of my child's advancement?",
+    a: (
+      <>
+        Use the{" "}
+        <a
+          href="https://help.scoutbook.scouting.org/knowledge-base/scouting-mobile-app-for-scoutbook/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline"
+        >
+          Scouting mobile app
+        </a>
+        , built on Scoutbook.
+      </>
+    ),
+  },
+  {
     q: "How do we stay updated on pack news and events?",
     a: "Join our Discord server and Facebook group — that's where announcements, schedule changes, and reminders get posted.",
   },
   {
     q: "Is Pack 786 open to girls?",
     a: "Pack 786 is chartered as a boys-only (non-coed) Cub Scout pack. Parents/guardians and volunteers of any gender are welcome and encouraged to participate.",
+  },
+  {
+    q: "Can I volunteer as the mom to my son?",
+    a: "Absolutely! While Pack 786 is a boys-only (non-coed) pack, volunteers are welcome regardless of gender.",
   },
   {
     q: "Who do I contact with questions?",
