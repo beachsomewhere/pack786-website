@@ -65,34 +65,32 @@ export default async function HomePage() {
 
       {/* Where we meet */}
       <section className="mx-auto max-w-6xl px-4 py-8">
-        <div className="grid gap-8 md:grid-cols-2 md:items-center">
-          <div>
-            <p className="eyebrow">Where We Meet</p>
-            <h2 className="mt-2 font-display text-3xl font-bold text-trail-blue">
-              Aspen View Academy &middot; Castle Rock, CO
-            </h2>
-            <p className="mt-3 text-trail-ink/70">
-              Pack meetings are held on the 1st Tuesday of every month, 6:00&ndash;7:30 PM, at Aspen View
-              Academy. Families are always welcome to stop by.
-            </p>
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Aspen+View+Academy+Castle+Rock+CO"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-5 inline-block btn-secondary"
-            >
-              Get Directions
-            </a>
-          </div>
-          <div className="aspect-[4/3] overflow-hidden rounded-trail">
-            <iframe
-              title="Map to Aspen View Academy, Castle Rock, CO"
-              src="https://www.google.com/maps?q=Aspen+View+Academy,+Castle+Rock,+CO&output=embed"
-              className="h-full w-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
+        <div className="text-center">
+          <p className="eyebrow">Where We Meet</p>
+          <h2 className="mt-2 font-display text-3xl font-bold text-trail-blue">
+            Aspen View Academy &middot; Castle Rock, CO
+          </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-trail-ink/70">
+            Pack meetings are held on the 1st Tuesday of every month, 6:00&ndash;7:30 PM, at Aspen View
+            Academy. Families are always welcome to stop by.
+          </p>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=Aspen+View+Academy+Castle+Rock+CO"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-block btn-secondary"
+          >
+            Get Directions
+          </a>
+        </div>
+        <div className="mt-8 h-[420px] overflow-hidden rounded-trail">
+          <iframe
+            title="Map to Aspen View Academy, Castle Rock, CO"
+            src="https://www.google.com/maps?q=Aspen+View+Academy,+Castle+Rock,+CO&z=15&output=embed"
+            className="h-full w-full border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
         </div>
       </section>
 
