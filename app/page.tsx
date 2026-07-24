@@ -27,9 +27,9 @@ export default async function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden text-white">
+      <section className="relative min-h-[520px] overflow-hidden text-white">
         <div
-          className="absolute inset-0 bg-trail-blue-dark bg-cover bg-center"
+          className="absolute inset-0 bg-trail-blue-dark bg-cover bg-bottom"
           style={{ backgroundImage: "url('/media/hero-nightsky.jpg')" }}
           aria-hidden="true"
         />
