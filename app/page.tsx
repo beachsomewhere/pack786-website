@@ -7,15 +7,6 @@ import { getFeaturedEvents, getUpcomingEvents } from "@/lib/events";
 // of the event photo batch is held out of `public/` until more come in.
 const APPROVED_PHOTO = "/media/photos/750617643_10108625404761847_6173254261643733498_n.jpg";
 
-const WHAT_WE_DO = [
-  { title: "Camping & Outdoor Adventures", desc: "Family campouts that build real outdoor skills.", icon: "⛺" },
-  { title: "Pinewood Derby", desc: "Design, build, and race a car with your Scout.", icon: "🏎️" },
-  { title: "Community Service", desc: "Wreath layings, card-making, and neighborhood projects.", icon: "🤝" },
-  { title: "STEM & Hands-On Activities", desc: "Rockets, robots, and hands-on building.", icon: "🔬" },
-  { title: "Hiking & Outdoor Skills", desc: "Knots, navigation, and time outside.", icon: "🥾" },
-  { title: "Family Events", desc: "Pack Olympics, Blue & Gold, and holiday parties.", icon: "🎉" },
-];
-
 const WHY_CUB_SCOUTING = [
   { title: "Character & Values", desc: "Building integrity and strong personal values that last a lifetime.", icon: "🌟" },
   { title: "Citizenship", desc: "Growing into a responsible, engaged member of the community.", icon: "🏛️" },
@@ -121,25 +112,14 @@ export default async function HomePage() {
 
       <div className="trail-divider mx-auto max-w-6xl" />
 
-      {/* What we do */}
+      {/* Why Cub Scouting */}
       <section className="mx-auto max-w-6xl px-4 py-8">
-        <h2 className="text-center font-display text-3xl font-bold text-trail-blue">What We Do</h2>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {WHAT_WE_DO.map((item) => (
-            <div key={item.title} className="card">
-              <span className="text-3xl">{item.icon}</span>
-              <h3 className="mt-3 font-display text-lg font-bold text-trail-blue">{item.title}</h3>
-              <p className="mt-1 text-sm text-trail-ink/70">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        <h3 className="mt-16 text-center font-display text-2xl font-bold text-trail-blue">Why Cub Scouting?</h3>
+        <h2 className="text-center font-display text-3xl font-bold text-trail-blue">Why Cub Scouting?</h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {WHY_CUB_SCOUTING.map((item) => (
             <div key={item.title} className="card">
               <span className="text-3xl">{item.icon}</span>
-              <h4 className="mt-3 font-display text-lg font-bold text-trail-blue">{item.title}</h4>
+              <h3 className="mt-3 font-display text-lg font-bold text-trail-blue">{item.title}</h3>
               <p className="mt-1 text-sm text-trail-ink/70">{item.desc}</p>
             </div>
           ))}
