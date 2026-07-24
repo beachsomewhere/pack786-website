@@ -20,6 +20,7 @@ const config: Config = {
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
         body: ["var(--font-body)", "system-ui", "sans-serif"],
+        playful: ["var(--font-playful)", "system-ui", "sans-serif"],
       },
       borderRadius: {
         trail: "1.25rem",

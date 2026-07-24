@@ -16,6 +16,18 @@ const WHAT_WE_DO = [
   { title: "Family Events", desc: "Pack Olympics, Blue & Gold, and holiday parties.", icon: "🎉" },
 ];
 
+const WHY_CUB_SCOUTING = [
+  { title: "Character & Values", desc: "Building integrity and strong personal values that last a lifetime.", icon: "🌟" },
+  { title: "Citizenship", desc: "Growing into a responsible, engaged member of the community.", icon: "🏛️" },
+  { title: "Fitness & Sportsmanship", desc: "Healthy habits, teamwork, and pride in physical and mental growth.", icon: "🏅" },
+  { title: "Family Connection", desc: "Strengthening family bonds through shared adventures.", icon: "👨‍👩‍👧‍👦" },
+  { title: "Respect & Relationships", desc: "Encouraging kindness, cooperation, and respect for others.", icon: "🤗" },
+  { title: "Achievement & Skills", desc: "Building confidence by learning new interests and skills.", icon: "🎯" },
+  { title: "Service & Effort", desc: "Learning to help others and always do your best.", icon: "💪" },
+  { title: "Fun & Adventure", desc: "Exciting, hands-on experiences that make growing up fun.", icon: "🔥" },
+  { title: "Future Readiness", desc: "Preparing Scouts for their next journey into Scouts BSA.", icon: "🚀" },
+];
+
 export default async function HomePage() {
   const featured = (await getFeaturedEvents()).slice(0, 3);
   const upcoming = await getUpcomingEvents(3);
@@ -24,11 +36,16 @@ export default async function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-trail-blue bg-contour text-white">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-20 md:grid-cols-2 md:items-center md:py-28">
+      <section className="relative overflow-hidden text-white">
+        <div
+          className="absolute inset-0 bg-trail-blue-dark bg-cover bg-center"
+          style={{ backgroundImage: "url('/media/hero-nightsky.svg')" }}
+          aria-hidden="true"
+        />
+        <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-20 md:grid-cols-2 md:items-center md:py-28">
           <div>
             <p className="eyebrow text-trail-gold">Cub Scout Pack 786 &middot; Castle Rock, CO</p>
-            <h1 className="mt-3 font-display text-4xl font-bold leading-tight md:text-5xl">
+            <h1 className="mt-3 font-playful text-5xl font-extrabold leading-tight drop-shadow-md md:text-6xl">
               Adventure Starts Here
             </h1>
             <p className="mt-4 max-w-md text-lg text-white/85">
@@ -43,7 +60,7 @@ export default async function HomePage() {
               </Link>
             </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-trail">
+          <div className="relative aspect-[4/3] rotate-1 overflow-hidden rounded-trail border-4 border-white shadow-2xl">
             <Image
               src={APPROVED_PHOTO}
               alt="Pack 786 scout on an outdoor adventure"
@@ -112,6 +129,17 @@ export default async function HomePage() {
             <div key={item.title} className="card">
               <span className="text-3xl">{item.icon}</span>
               <h3 className="mt-3 font-display text-lg font-bold text-trail-blue">{item.title}</h3>
+              <p className="mt-1 text-sm text-trail-ink/70">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <h3 className="mt-16 text-center font-display text-2xl font-bold text-trail-blue">Why Cub Scouting?</h3>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {WHY_CUB_SCOUTING.map((item) => (
+            <div key={item.title} className="card">
+              <span className="text-3xl">{item.icon}</span>
+              <h4 className="mt-3 font-display text-lg font-bold text-trail-blue">{item.title}</h4>
               <p className="mt-1 text-sm text-trail-ink/70">{item.desc}</p>
             </div>
           ))}
