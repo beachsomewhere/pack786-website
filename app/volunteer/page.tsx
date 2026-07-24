@@ -26,6 +26,21 @@ export default function VolunteerPage() {
         skill set. Small one-time help matters just as much as a standing leadership role.
       </p>
 
+      <div className="mt-6 card bg-trail-blue/5 text-sm text-trail-ink/70">
+        All registered adult leaders (den leaders, committee members, and other registered volunteer
+        roles) are required to complete BSA Youth Protection Training and other applicable adult leader
+        training before taking on a leadership role. Learn more and get started at{" "}
+        <a
+          href="https://www.scouting.org/programs/cub-scouts/leader-resources/adult-leader-training/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold underline"
+        >
+          scouting.org/programs/cub-scouts/leader-resources/adult-leader-training
+        </a>
+        .
+      </div>
+
       <div className="mt-8 grid gap-4 sm:grid-cols-2">
         {WAYS_TO_HELP.map((item) => (
           <div key={item.title} className="card">
