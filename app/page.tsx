@@ -30,9 +30,10 @@ export default async function HomePage() {
       <section className="relative overflow-hidden text-white">
         <div
           className="absolute inset-0 bg-trail-blue-dark bg-cover bg-center"
-          style={{ backgroundImage: "url('/media/hero-nightsky.svg')" }}
+          style={{ backgroundImage: "url('/media/hero-nightsky.jpg')" }}
           aria-hidden="true"
         />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-transparent" aria-hidden="true" />
         <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-20 md:grid-cols-2 md:items-center md:py-28">
           <div>
             <p className="eyebrow text-trail-gold">Cub Scout Pack 786 &middot; Castle Rock, CO</p>
