@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Volunteer" };
 const CURRENT_NEEDS = [
   { title: "Tiger Den Leader", grade: "1st Grade", desc: "Lead the Tiger den's monthly meetings and activities." },
   { title: "Bear Den Leader", grade: "3rd Grade", desc: "Lead the Bear den's monthly meetings and activities." },
-  { title: "Fundraising Chair", desc: "Coordinate popcorn, Butterbraid, and other pack fundraising activities." },
+  { title: "Fundraising Chair", desc: "Coordinate Butterbraid sales, spirit nights, and other fundraising activities." },
 ];
 
 const WAYS_TO_HELP = [
