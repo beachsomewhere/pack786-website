@@ -8,11 +8,11 @@ const LEADERS = [
   { name: "Colby Young", role: "Committee Chair", email: "colbypyoung@gmail.com" },
   { name: "Tiffany Reyes", role: "Treasurer", email: "tandbreyes@me.com" },
   { name: "Sarah Humbargar", role: "Recruitment Chair", email: "sarah.humbargar@gmail.com" },
-  { name: "Josh Barnes", role: "Lion Den Leader (Kindergarten)", email: "joshua.b.barnes@gmail.com" },
-  { name: "Ryan Means", role: "Wolf Den Leader (2nd Grade)", email: "ryan@means.tech" },
-  { name: "Dan Shehan", role: "Webelos Den Leader (4th Grade)", email: "shehandn@gmail.com" },
-  { name: "Matt Finuf", role: "Webelos Den Leader (4th Grade)", email: "matt.finuf@gmail.com" },
-  { name: "Daniel McElwaine", role: "AOL Den Leader (5th Grade)", email: "Disco73@msn.com" },
+  { name: "Josh Barnes", role: "Lion Den Leader", grade: "Kindergarten", email: "joshua.b.barnes@gmail.com" },
+  { name: "Ryan Means", role: "Wolf Den Leader", grade: "2nd Grade", email: "ryan@means.tech" },
+  { name: "Dan Shehan", role: "Webelos Den Leader", grade: "4th Grade", email: "shehandn@gmail.com" },
+  { name: "Matt Finuf", role: "Webelos Den Leader", grade: "4th Grade", email: "matt.finuf@gmail.com" },
+  { name: "Daniel McElwaine", role: "AOL Den Leader", grade: "5th Grade", email: "Disco73@msn.com" },
 ];
 
 function initials(name: string) {
@@ -46,6 +46,7 @@ export default function LeadershipPage() {
             )}
             <p className="mt-4 font-display font-bold text-trail-blue">{leader.name}</p>
             <p className="text-sm text-trail-ink/60">{leader.role}</p>
+            {leader.grade && <p className="text-sm text-trail-ink/60">{leader.grade}</p>}
             <a href={`mailto:${leader.email}`} className="mt-2 inline-block text-sm underline">
               {leader.email}
             </a>
