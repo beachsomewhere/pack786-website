@@ -16,7 +16,7 @@ const WAYS_TO_HELP = [
   { title: "Transportation", desc: "Help carpool families to an off-site activity." },
   { title: "Activity Stations", desc: "Run a station at Pack Olympics, derby day, or a campout." },
   { title: "Photography", desc: "Capture the moments for our gallery and recap stories." },
-  { title: "Fundraising", desc: "Support popcorn, Butterbraid, or other pack fundraisers." },
+  { title: "Fundraising", desc: "Support Butterbraid sales, spirit nights, and other fundraising activities." },
   { title: "Den Leadership", desc: "Lead or co-lead a den's monthly meetings." },
   { title: "Committee Roles", desc: "Help with planning, finances, or advancement tracking." },
   { title: "Equipment & Camping Support", desc: "Help manage pack gear or support campouts." },
