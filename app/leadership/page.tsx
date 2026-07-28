@@ -8,10 +8,11 @@ const LEADERS = [
   { name: "Colby Young", role: "Committee Chair", email: "colbypyoung@gmail.com" },
   { name: "Tiffany Reyes", role: "Treasurer", email: "tandbreyes@me.com" },
   { name: "Sarah Humbargar", role: "Recruitment Chair", email: "sarah.humbargar@gmail.com" },
-  { name: "Daniel McElwaine", role: "Webelos Den Leader", email: "Disco73@msn.com" },
-  { name: "Dan Shehan", role: "Bears Den Leader", email: "shehandn@gmail.com" },
-  { name: "Matt Finuf", role: "Bears Den Leader", email: "matt.finuf@gmail.com" },
-  { name: "Ryan Means", role: "Tigers/Lions Den Leader", email: "ryan@means.tech" },
+  { name: "Josh Barnes", role: "Lion Den Leader (Kindergarten)", email: "joshua.b.barnes@gmail.com" },
+  { name: "Ryan Means", role: "Wolf Den Leader (2nd Grade)", email: "ryan@means.tech" },
+  { name: "Dan Shehan", role: "Webelos Den Leader (4th Grade)", email: "shehandn@gmail.com" },
+  { name: "Matt Finuf", role: "Webelos Den Leader (4th Grade)", email: "matt.finuf@gmail.com" },
+  { name: "Daniel McElwaine", role: "AOL Den Leader (5th Grade)", email: "Disco73@msn.com" },
 ];
 
 function initials(name: string) {
