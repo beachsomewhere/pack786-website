@@ -3,6 +3,12 @@ import VolunteerForm from "@/components/VolunteerForm";
 
 export const metadata: Metadata = { title: "Volunteer" };
 
+const CURRENT_NEEDS = [
+  { title: "Tiger Den Leader", grade: "1st Grade", desc: "Lead the Tiger den's monthly meetings and activities." },
+  { title: "Bear Den Leader", grade: "3rd Grade", desc: "Lead the Bear den's monthly meetings and activities." },
+  { title: "Fundraising Chair", desc: "Coordinate popcorn, Butterbraid, and other pack fundraising activities." },
+];
+
 const WAYS_TO_HELP = [
   { title: "One-Time Help", desc: "Show up for a single event — no ongoing commitment." },
   { title: "Event Setup & Cleanup", desc: "Extra hands before and after pack events." },
@@ -41,7 +47,21 @@ export default function VolunteerPage() {
         .
       </div>
 
-      <div className="mt-8 grid gap-4 sm:grid-cols-2">
+      <h2 className="mt-10 font-display text-2xl font-bold text-trail-blue">Current Volunteer Needs</h2>
+      <p className="mt-1 text-sm text-trail-ink/60">These roles need to be filled soonest — but every role below matters too.</p>
+      <div className="mt-4 grid gap-4 sm:grid-cols-3">
+        {CURRENT_NEEDS.map((item) => (
+          <div key={item.title} className="card border-2 border-trail-gold bg-trail-gold/10">
+            <span className="rounded-full bg-trail-gold px-3 py-1 text-xs font-display font-semibold text-trail-blue-dark">Needed Now</span>
+            <p className="mt-3 font-display font-bold text-trail-blue">{item.title}</p>
+            {item.grade && <p className="text-sm text-trail-ink/60">{item.grade}</p>}
+            <p className="mt-1 text-sm text-trail-ink/70">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <h2 className="mt-12 font-display text-2xl font-bold text-trail-blue">Other Ways to Help</h2>
+      <div className="mt-4 grid gap-4 sm:grid-cols-2">
         {WAYS_TO_HELP.map((item) => (
           <div key={item.title} className="card">
             <p className="font-display font-bold text-trail-blue">{item.title}</p>
