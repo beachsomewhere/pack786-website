@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import TurnstileWidget from "./TurnstileWidget";
 
 export default function RecruitmentForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "done" | "error">("idle");
@@ -23,8 +24,10 @@ export default function RecruitmentForm() {
         headers: { "Content-Type": "application/json" },
       });
       setStatus(res.ok ? "done" : "error");
+      if (!res.ok) (window as any).turnstile?.reset();
     } catch {
       setStatus("error");
+      (window as any).turnstile?.reset();
     }
   }
 
@@ -66,6 +69,8 @@ export default function RecruitmentForm() {
         <input type="checkbox" name="consent" required className="mt-1 h-4 w-4" />
         <span>I consent to being contacted by Pack 786 about my inquiry.</span>
       </label>
+
+      <TurnstileWidget />
 
       <button type="submit" disabled={status === "submitting"} className="btn-primary">
         {status === "submitting" ? "Sending…" : "Request Information"}

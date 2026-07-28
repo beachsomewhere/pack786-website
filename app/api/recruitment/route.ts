@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { RecruitmentInquiry } from "@/types";
+import { verifyTurnstile } from "@/lib/turnstile";
 
 // ---------------------------------------------------------------------------
 // PHASE 2 TODO: replace this stub with a real Supabase insert + email notify.
@@ -14,6 +15,11 @@ export async function POST(req: NextRequest) {
 
   if (!body.guardianName || !body.email || !body.consent) {
     return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
+  }
+
+  const humanVerified = await verifyTurnstile(body["cf-turnstile-response"], req.headers.get("x-forwarded-for") ?? undefined);
+  if (!humanVerified) {
+    return NextResponse.json({ error: "Verification failed. Please try again." }, { status: 400 });
   }
 
   const inquiry: RecruitmentInquiry = {

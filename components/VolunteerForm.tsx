@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import TurnstileWidget from "./TurnstileWidget";
 
 const AREAS = [
   "Event setup & cleanup",
@@ -36,8 +37,10 @@ export default function VolunteerForm() {
         headers: { "Content-Type": "application/json" },
       });
       setStatus(res.ok ? "done" : "error");
+      if (!res.ok) (window as any).turnstile?.reset();
     } catch {
       setStatus("error");
+      (window as any).turnstile?.reset();
     }
   }
 
@@ -102,6 +105,8 @@ export default function VolunteerForm() {
         <input type="checkbox" name="interestedInLeadership" className="h-4 w-4" />
         I'm interested in a den or pack leadership role.
       </label>
+
+      <TurnstileWidget />
 
       <button type="submit" disabled={status === "submitting"} className="btn-primary">
         {status === "submitting" ? "Sending…" : "Sign Up to Help"}

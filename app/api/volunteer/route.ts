@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { verifyTurnstile } from "@/lib/turnstile";
 
 // PHASE 2 TODO: persist to Supabase `volunteer_signups` table.
 export async function POST(req: NextRequest) {
@@ -6,6 +7,12 @@ export async function POST(req: NextRequest) {
   if (!body.name || !body.email) {
     return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
   }
+
+  const humanVerified = await verifyTurnstile(body["cf-turnstile-response"], req.headers.get("x-forwarded-for") ?? undefined);
+  if (!humanVerified) {
+    return NextResponse.json({ error: "Verification failed. Please try again." }, { status: 400 });
+  }
+
   console.log("New volunteer signup (not yet persisted):", body.email);
   await notifyDiscord(body);
   return NextResponse.json({ ok: true });

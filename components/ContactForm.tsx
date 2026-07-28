@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import TurnstileWidget from "./TurnstileWidget";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<"idle" | "submitting" | "done" | "error">("idle");
@@ -23,8 +24,10 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
       });
       setStatus(res.ok ? "done" : "error");
+      if (!res.ok) (window as any).turnstile?.reset();
     } catch {
       setStatus("error");
+      (window as any).turnstile?.reset();
     }
   }
 
@@ -57,6 +60,8 @@ export default function ContactForm() {
         Message
         <textarea name="message" rows={4} required className="rounded-xl border border-trail-line p-3" />
       </label>
+      <TurnstileWidget />
+
       <button type="submit" disabled={status === "submitting"} className="btn-primary">
         {status === "submitting" ? "Sending…" : "Send Message"}
       </button>
