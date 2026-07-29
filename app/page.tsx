@@ -135,9 +135,6 @@ export default async function HomePage() {
           <h2 className="font-display text-3xl font-bold text-trail-blue">Upcoming Adventures</h2>
           <Link href="/events" className="font-semibold text-trail-blue hover:underline">See all events →</Link>
         </div>
-        <p className="mt-2 text-sm text-trail-ink/60">
-          Current Schedule — 2026–2027 Dates Coming Soon
-        </p>
         <div className="mt-6 grid gap-6 md:grid-cols-3">
           {spotlight.map((event) => <EventCard key={event.slug} event={event} />)}
         </div>

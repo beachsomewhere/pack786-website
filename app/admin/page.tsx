@@ -36,8 +36,8 @@ export default async function AdminDashboard() {
 
         <Section title="Program Year">
           <p className="text-sm text-trail-ink/70">
-            Active program year: <strong>2025–2026</strong>. Admins can designate 2026–2027 as active once
-            ready, without deleting the prior schedule — past years move to Archived.
+            Active program year: <strong>2026–2027</strong>. Admins can designate a new program year as
+            active once ready, without deleting the prior schedule — past years move to Archived.
           </p>
         </Section>
 

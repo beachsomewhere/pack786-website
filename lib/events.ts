@@ -9,7 +9,7 @@ import eventsData from "@/data/events.json";
 //   3. Leave every function signature the same — no page/component changes needed.
 // ---------------------------------------------------------------------------
 
-const ACTIVE_PROGRAM_YEAR: ProgramYear = "2025-2026"; // admin-toggleable setting in phase 2
+const ACTIVE_PROGRAM_YEAR: ProgramYear = "2026-2027"; // admin-toggleable setting in phase 2
 
 export async function getAllEvents(): Promise<PackEvent[]> {
   return eventsData as PackEvent[];
@@ -30,7 +30,9 @@ export async function getUpcomingEvents(limit?: number): Promise<PackEvent[]> {
 
 export async function getFeaturedEvents(): Promise<PackEvent[]> {
   const all = await getAllEvents();
-  return all.filter((e) => e.featured);
+  return all
+    .filter((e) => e.featured && e.status !== "Completed" && e.status !== "Canceled")
+    .sort((a, b) => (a.date || "9999").localeCompare(b.date || "9999"));
 }
 
 export async function getPastEvents(): Promise<PackEvent[]> {

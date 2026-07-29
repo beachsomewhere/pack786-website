@@ -12,6 +12,7 @@ export type EventCategory =
   | "Camping"
   | "Service Project"
   | "Fundraiser"
+  | "Parent Meeting"
   | "Leadership Meeting"
   | "Training";
 

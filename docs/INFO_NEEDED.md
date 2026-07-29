@@ -9,7 +9,7 @@
 - [x] Pack leader names, roles — Kyle Barnes (Cubmaster), Colby Young (Committee Chair). Bios/photos still not provided.
 - [x] Payment link — Venmo @CubScoutPack786
 - [ ] Approved hero and gallery photos (with photo-release consent on file) — only 1 of ~103 collected photos has a signed waiver so far; gallery is disabled pending more. The rest are kept locally in `media-pending-consent/` (gitignored, not in the repo).
-- [ ] Real 2026–2027 program-year calendar, once finalized (this build ships the prior year's schedule as clearly labeled placeholder content)
+- [x] Real 2026–2027 program-year calendar — full schedule added, active program year updated in `lib/events.ts`
 - [ ] Financial assistance program details/contact
 - [x] BSA-approved Cub Scouting logo provided, used as the site favicon (`app/icon.png`). Official den emblems (Lion/Tiger/Wolf/etc.) still not provided — About page uses generic animal emoji as a placeholder instead.
 - [ ] Privacy policy / terms language reviewed by council or a trusted adult

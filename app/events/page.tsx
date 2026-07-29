@@ -24,14 +24,6 @@ export default async function EventsPage({
       <p className="eyebrow">What's Happening</p>
       <h1 className="mt-2 font-display text-4xl font-bold text-trail-blue">Pack 786 Events</h1>
 
-      <div className="mt-4 card bg-trail-gold/10 text-sm text-trail-ink/80">
-        Our upcoming Pack 786 calendar is currently being updated. The events shown here reflect our
-        existing schedule and provide examples of the adventures, activities, service projects, and
-        family events our pack typically offers. Final 2026–2027 dates will be announced soon.
-        <br />
-        <span className="font-semibold">Current Schedule — 2026–2027 Dates Coming Soon</span>
-      </div>
-
       <EventFilters categories={categories} active={searchParams.category} />
 
       <section className="mt-8">
