@@ -9,7 +9,7 @@ const LEADERS = [
   { name: "Tiffany Reyes", role: "Treasurer", email: "tandbreyes@me.com" },
   { name: "Sarah Humbargar", role: "Recruitment Chair", email: "sarah.humbargar@gmail.com" },
   { name: "Josh Barnes", role: "Lion Den Leader", grade: "Kindergarten", email: "joshua.b.barnes@gmail.com" },
-  { name: "Ryan Means", role: "Wolf Den Leader", grade: "2nd Grade", email: "ryan@means.tech" },
+  { name: "Ryan Means", role: "Wolf Den Leader", grade: "2nd Grade", email: "scouting@means.tech" },
   { name: "Dan Shehan", role: "Webelos Den Leader", grade: "4th Grade", email: "shehandn@gmail.com" },
   { name: "Matt Finuf", role: "Webelos Den Leader", grade: "4th Grade", email: "matt.finuf@gmail.com" },
   { name: "Daniel McElwaine", role: "AOL Den Leader", grade: "5th Grade", email: "Disco73@msn.com" },
