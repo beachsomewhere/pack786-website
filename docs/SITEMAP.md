@@ -18,7 +18,6 @@
 - `/admin` — Dashboard overview
 - `/admin/import` — Google Sheets CSV calendar import
 - `/admin/events` — Event CRUD (to be built alongside Supabase wiring)
-- `/admin/registrations` — Per-event registration management
 - `/admin/announcements`
 - `/admin/documents`
 - `/admin/gallery`

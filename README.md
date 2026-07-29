@@ -1,7 +1,7 @@
 # Cub Scout Pack 786 Website
 
 A Next.js + TypeScript + Tailwind site for recruiting new families and
-supporting current Pack 786 families with events, registration, volunteer
+supporting current Pack 786 families with event info, volunteer
 coordination, and resources.
 
 ## Start here
@@ -17,8 +17,9 @@ coordination, and resources.
 - All public pages, navigation, and content structure
 - The full event system, reading from `data/events.json` (imported from the
   pack's current planning sheet) through a swappable `lib/events.ts` layer
-- Recruitment, volunteer, and event registration forms, posting to Next.js
-  API route stubs with a honeypot spam field
+- Recruitment, volunteer, and contact forms, posting to Next.js API route
+  stubs with a honeypot + Cloudflare Turnstile spam/bot check, and notifying
+  Discord in real time
 - Calendar export (Google Calendar, Outlook, .ics) per event
 - A CSV import script (`scripts/import-events.ts`) mapping Google Sheets
   exports into the event schema

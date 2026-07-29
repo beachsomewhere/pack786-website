@@ -44,32 +44,6 @@ create policy "events are publicly readable" on events for select using (true);
 create policy "only admins can write events" on events for all
   using (auth.jwt() ->> 'role' in ('site_admin','pack_leader','event_coordinator'));
 
--- PRIVATE: admin/service-role only. Contains children's names/ages, medical info.
-create table event_registrations (
-  id uuid primary key default gen_random_uuid(),
-  event_slug text references events(slug),
-  family_name text not null,
-  guardian_name text not null,
-  guardian_email text not null,
-  guardian_phone text,
-  attending_adults text[],
-  attending_children jsonb, -- [{name, age, den}]
-  den text,
-  total_attending int,
-  dietary_restrictions text,
-  allergies text,
-  emergency_contact jsonb, -- {name, phone, relationship}
-  volunteer_interest text,
-  items_bringing text,
-  payment_status text default 'Not Required',
-  internal_notes text,
-  submitted_at timestamptz default now()
-);
-alter table event_registrations enable row level security;
-create policy "registrations are admin-only" on event_registrations for all
-  using (auth.jwt() ->> 'role' in ('site_admin','pack_leader','event_coordinator'));
--- No public select policy is created on this table, intentionally.
-
 create table recruitment_inquiries (
   id uuid primary key default gen_random_uuid(),
   guardian_name text not null,
@@ -145,8 +119,8 @@ Role is stored as a custom claim on the Supabase Auth user (or a separate
 |---|---|
 | Site Administrator | Everything: users/roles, all content, all exports, settings |
 | Pack Leader | Events, announcements, documents, gallery, recruitment inquiries, volunteers |
-| Event Coordinator | Registrations + volunteer assignments for events they're assigned to |
+| Event Coordinator | Volunteer assignments for events they're assigned to |
 
 ## Public vs. private, at a glance
 - **Public**: events, announcements, documents (non-archived), gallery photos, recruitment/volunteer/contact *forms* (write-only from the public side).
-- **Private**: registration records, recruitment inquiries, volunteer signups, emergency contacts, medical/dietary info, internal planning notes. None of these have a public `select` policy.
+- **Private**: recruitment inquiries, volunteer signups, internal planning notes. None of these have a public `select` policy.

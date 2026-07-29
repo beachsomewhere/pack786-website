@@ -41,11 +41,10 @@ export default async function AdminDashboard() {
           </p>
         </Section>
 
-        <Section title="Registrations">
+        <Section title="Form Submissions">
           <p className="text-sm text-trail-ink/70">
-            View registrations per event, export attendee/emergency-contact lists (CSV/print), mark
-            attendance, and email registered families. Children's personal details are never exposed
-            publicly.
+            View Contact, Volunteer, and Recruitment form submissions (also notified to Discord in
+            real time). Children's personal details are never exposed publicly.
           </p>
         </Section>
 
@@ -53,7 +52,7 @@ export default async function AdminDashboard() {
           <ul className="space-y-2 text-sm text-trail-ink/70">
             <li><strong>Site Administrator</strong> — full access: users, roles, all content, exports, settings.</li>
             <li><strong>Pack Leader</strong> — manage events, announcements, resources, gallery, recruitment inquiries.</li>
-            <li><strong>Event Coordinator</strong> — manage registrations and volunteer signups for assigned events only.</li>
+            <li><strong>Event Coordinator</strong> — manage volunteer signups for assigned events only.</li>
           </ul>
         </Section>
       </div>

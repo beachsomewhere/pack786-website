@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
 import { getAllEvents, getEventBySlug } from "@/lib/events";
 import { buildGoogleCalendarUrl, buildIcsDataUrl, buildOutlookUrl } from "@/lib/calendar";
-import RegistrationForm from "@/components/RegistrationForm";
 
 export async function generateStaticParams() {
   const events = await getAllEvents();
@@ -63,12 +62,6 @@ export default async function EventDetailPage({ params }: { params: { slug: stri
           <a href="/volunteer" className="btn-secondary">Sign Up to Volunteer</a>
         )}
       </div>
-
-      {(event.status === "Registration Open" || event.status === "Confirmed") && (
-        <div className="mt-10">
-          <RegistrationForm eventSlug={event.slug} eventName={event.name} />
-        </div>
-      )}
 
       <div className="trail-divider" />
 

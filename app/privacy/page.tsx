@@ -7,10 +7,9 @@ export default function PrivacyPage() {
       <p className="text-trail-ink/70">
         [Placeholder — have this reviewed by your council or a trusted adult before publishing.] Pack 786
         collects only the information needed to run pack activities: contact details submitted through our
-        forms, and event registration details from participating families. We do not publish children's
-        full names, contact information, or medical information. Photos are only published with a parent
-        or guardian's permission. Registration and inquiry data is stored securely and accessible only to
-        authorized pack leaders.
+        Contact, Volunteer, and Join forms. We do not publish children's full names, contact information,
+        or medical information. Photos are only published with a parent or guardian's permission. Form
+        submission data is accessible only to authorized pack leaders.
       </p>
     </div>
   );

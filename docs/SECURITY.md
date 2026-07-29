@@ -1,9 +1,9 @@
 # Security & Privacy Notes
 
 ## Child safety principles baked into this build
-- No child full names, photos-with-names, or contact info in any public page or public API response (see `types/index.ts` — `PackEvent` is the only type used on public pages; registration/inquiry types are server-only).
+- No child full names, photos-with-names, or contact info in any public page or public API response (see `types/index.ts` — `PackEvent` is the only type used on public pages; inquiry/signup types are server-only).
 - Gallery captions must use first name + last initial at most, per the "Photo Gallery" requirements — enforce this in the admin gallery upload form in phase 2.
-- Registration and recruitment data (medical info, emergency contacts, children's ages) lives in tables with **no public read policy at all** (see `docs/DATA_MODEL.md`), not just a "hidden" UI.
+- Recruitment and volunteer data lives in tables with **no public read policy at all** (see `docs/DATA_MODEL.md`), not just a "hidden" UI. The site does not collect event registrations/RSVPs — it's informational only.
 
 ## Current state vs. what's still needed before launch
 This deliverable ships the frontend, data shapes, and API route *stubs*.
@@ -17,6 +17,6 @@ Before real families submit real data, you still need to:
 7. Confirm your Google Sheets import (`scripts/import-events.ts`) is run manually or via a scheduled job you control — don't grant the website itself standing write access to the Sheet.
 
 ## Ongoing practices
-- Every admin action that touches registration or inquiry data should require authentication — never add a public API route that reads from `event_registrations`, `recruitment_inquiries`, or `volunteer_signups`.
-- When exporting CSVs (attendee lists, emergency contacts) from the admin dashboard, treat the exported file itself as sensitive — it should never be emailed to a public list or posted anywhere public.
+- Every admin action that touches inquiry or signup data should require authentication — never add a public API route that reads from `recruitment_inquiries` or `volunteer_signups`.
+- When exporting CSVs from the admin dashboard, treat the exported file itself as sensitive — it should never be emailed to a public list or posted anywhere public.
 - Review the Google Sheet's sharing settings periodically; the import script only reads event content, never sharing/ownership metadata, and the site never surfaces who owns or can edit the source spreadsheet.

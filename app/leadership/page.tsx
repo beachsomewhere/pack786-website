@@ -6,7 +6,7 @@ export const metadata: Metadata = { title: "Leadership" };
 const LEADERS = [
   { name: "Kyle Barnes", role: "Cubmaster", email: "kylecbarnes@gmail.com", phone: "720-320-9648", photo: "/media/leaders/kyle-barnes.jpg" },
   { name: "Colby Young", role: "Committee Chair", email: "colbypyoung@gmail.com", photo: "/media/leaders/colby-young.jpg" },
-  { name: "Tiffany Reyes", role: "Treasurer", email: "tandbreyes@me.com" },
+  { name: "Tiffany Reyes", role: "Treasurer", email: "tandbreyes@me.com", photo: "/media/leaders/tiffany-reyes.jpg" },
   { name: "Sarah Humbargar", role: "Recruitment Chair", email: "sarah.humbargar@gmail.com", photo: "/media/leaders/sarah-humbargar.jpg" },
   { name: "Josh Barnes", role: "Lion Den Leader", grade: "Kindergarten", email: "joshua.b.barnes@gmail.com" },
   { name: "Ryan Means", role: "Wolf Den Leader", grade: "2nd Grade", email: "scouting@means.tech", photo: "/media/leaders/ryan-means.jpg" },

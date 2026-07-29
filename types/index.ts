@@ -63,28 +63,6 @@ export interface PackEvent {
   confirmed: boolean; // true only when an admin has explicitly marked it Confirmed
 }
 
-/** Private registration record — admin/server only, never sent to public pages. */
-export interface EventRegistration {
-  id: string;
-  eventSlug: string;
-  familyName: string;
-  guardianName: string;
-  guardianEmail: string;
-  guardianPhone: string;
-  attendingAdults: string[];
-  attendingChildren: { name: string; age: number; den?: Den }[];
-  den?: Den;
-  totalAttending: number;
-  dietaryRestrictions?: string;
-  allergies?: string;
-  emergencyContact: { name: string; phone: string; relationship: string };
-  volunteerInterest?: string;
-  itemsBringing?: string;
-  paymentStatus: "Not Required" | "Pending" | "Paid" | "Waived";
-  internalNotes?: string;
-  submittedAt: string;
-}
-
 export interface RecruitmentInquiry {
   id: string;
   guardianName: string;

@@ -2,7 +2,7 @@
 
 - Full Supabase-backed admin CRUD for events, announcements, documents, and gallery (this build ships the schema, stub API routes, and UI shell).
 - Real calendar view (month grid) alongside the current list view — a component like `react-day-picker` or a custom grid reading from the same `lib/events.ts` layer.
-- Email notifications (e.g. via Resend) on new recruitment inquiries, volunteer signups, and registration confirmations.
+- Email notifications (e.g. via Resend) on new recruitment inquiries and volunteer signups.
 - Automated Google Sheets sync (via a scheduled serverless function using the Google Sheets API) instead of manual CSV export, once leadership is comfortable granting read-only API access.
 - Payment integration (Stripe or a Scout-friendly processor) for dues and event fees, replacing the external "[PAYMENT LINK]" placeholder.
 - Searchable/filterable family resource library with tagging.
