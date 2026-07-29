@@ -5,13 +5,13 @@ export const metadata: Metadata = { title: "Leadership" };
 
 const LEADERS = [
   { name: "Kyle Barnes", role: "Cubmaster", email: "kylecbarnes@gmail.com", phone: "720-320-9648", photo: "/media/leaders/kyle-barnes.jpg" },
-  { name: "Colby Young", role: "Committee Chair", email: "colbypyoung@gmail.com" },
+  { name: "Colby Young", role: "Committee Chair", email: "colbypyoung@gmail.com", photo: "/media/leaders/colby-young.jpg" },
   { name: "Tiffany Reyes", role: "Treasurer", email: "tandbreyes@me.com" },
-  { name: "Sarah Humbargar", role: "Recruitment Chair", email: "sarah.humbargar@gmail.com" },
+  { name: "Sarah Humbargar", role: "Recruitment Chair", email: "sarah.humbargar@gmail.com", photo: "/media/leaders/sarah-humbargar.jpg" },
   { name: "Josh Barnes", role: "Lion Den Leader", grade: "Kindergarten", email: "joshua.b.barnes@gmail.com" },
-  { name: "Ryan Means", role: "Wolf Den Leader", grade: "2nd Grade", email: "scouting@means.tech" },
+  { name: "Ryan Means", role: "Wolf Den Leader", grade: "2nd Grade", email: "scouting@means.tech", photo: "/media/leaders/ryan-means.jpg" },
   { name: "Dan Shehan", role: "Webelos Den Leader", grade: "4th Grade", email: "shehandn@gmail.com" },
-  { name: "Matt Finuf", role: "Webelos Den Leader", grade: "4th Grade", email: "matt.finuf@gmail.com" },
+  { name: "Matt Finuf", role: "Webelos Den Leader", grade: "4th Grade", email: "matt.finuf@gmail.com", photo: "/media/leaders/matt-finuf.jpg" },
   { name: "Daniel McElwaine", role: "AOL Den Leader", grade: "5th Grade", email: "Disco73@msn.com" },
 ];
 
@@ -36,11 +36,11 @@ export default function LeadershipPage() {
         {LEADERS.map((leader) => (
           <div key={leader.name} className="card text-center">
             {leader.photo ? (
-              <div className="relative mx-auto h-20 w-20 overflow-hidden rounded-full">
-                <Image src={leader.photo} alt={leader.name} fill className="object-cover" sizes="80px" />
+              <div className="relative mx-auto h-36 w-36 overflow-hidden rounded-full">
+                <Image src={leader.photo} alt={leader.name} fill className="object-cover" sizes="144px" />
               </div>
             ) : (
-              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-trail-blue/10 font-display text-xl font-bold text-trail-blue">
+              <div className="mx-auto flex h-36 w-36 items-center justify-center rounded-full bg-trail-blue/10 font-display text-3xl font-bold text-trail-blue">
                 {initials(leader.name)}
               </div>
             )}
