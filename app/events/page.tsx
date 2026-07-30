@@ -24,6 +24,28 @@ export default async function EventsPage({
       <p className="eyebrow">What's Happening</p>
       <h1 className="mt-2 font-display text-4xl font-bold text-trail-blue">Pack 786 Events</h1>
 
+      <div className="mt-6 card bg-trail-blue/5">
+        <p className="font-display font-bold text-trail-blue">Subscribe to Pack 786's Calendar</p>
+        <p className="mt-1 text-sm text-trail-ink/70">
+          Add this once and every event automatically stays up to date in your own calendar app — if a
+          date, time, or location changes, you'll see it without having to re-add anything.
+        </p>
+        <div className="mt-4 flex flex-wrap items-center gap-3">
+          <a href="webcal://pack786.com/calendar.ics" className="btn-primary">Subscribe (Apple/Outlook)</a>
+          <a
+            href="https://pack786.com/calendar.ics"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm underline"
+          >
+            Copy feed URL for Google Calendar
+          </a>
+        </div>
+        <p className="mt-2 text-xs text-trail-ink/50">
+          In Google Calendar: Other calendars (+) → From URL → paste the link above.
+        </p>
+      </div>
+
       <EventFilters categories={categories} active={searchParams.category} />
 
       <section className="mt-8">
@@ -44,8 +66,8 @@ export default async function EventsPage({
       </section>
 
       <p className="mt-10 text-xs text-trail-ink/50">
-        Prefer a calendar app? Downloadable .ics and Google/Apple/Outlook add-to-calendar links are
-        available on each event's page.
+        Only want one event instead of the full calendar? Each event's page has its own one-time
+        Google/Apple/Outlook add-to-calendar links — those won't update automatically if details change.
       </p>
     </div>
   );

@@ -52,25 +52,41 @@ export function buildOutlookUrl(event: PackEvent): string {
   return `https://outlook.live.com/calendar/0/deeplink/compose?${params.toString()}`;
 }
 
-export function buildIcsDataUrl(event: PackEvent): string {
+function buildVEvent(event: PackEvent): string[] | null {
   const range = parseStartEnd(event);
-  const start = range ? fmt(range.start) : "";
-  const end = range ? fmt(range.end) : "";
-  const ics = [
-    "BEGIN:VCALENDAR",
-    "VERSION:2.0",
-    "PRODID:-//Pack 786//Events//EN",
+  if (!range) return null;
+  return [
     "BEGIN:VEVENT",
     `UID:${event.slug}@pack786`,
-    start && `DTSTART:${start}`,
-    end && `DTEND:${end}`,
-    `SUMMARY:${event.name}`,
+    `DTSTAMP:${fmt(new Date())}`,
+    `DTSTART:${fmt(range.start)}`,
+    `DTEND:${fmt(range.end)}`,
+    `SUMMARY:${event.name}${event.status === "Tentative" ? " (Tentative)" : ""}`,
     `LOCATION:${event.location ?? ""}`,
     `DESCRIPTION:${(event.description ?? "").replace(/\n/g, "\\n")}`,
     "END:VEVENT",
-    "END:VCALENDAR",
-  ]
-    .filter(Boolean)
-    .join("\r\n");
+  ];
+}
+
+export function buildIcsDataUrl(event: PackEvent): string {
+  const vevent = buildVEvent(event) ?? [];
+  const ics = ["BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//Pack 786//Events//EN", ...vevent, "END:VCALENDAR"].join(
+    "\r\n"
+  );
   return `data:text/calendar;charset=utf-8,${encodeURIComponent(ics)}`;
+}
+
+/** Full subscribable feed of every event with a parseable date — used by the /calendar.ics route. */
+export function buildIcsFeed(events: PackEvent[]): string {
+  const vevents = events.flatMap((e) => buildVEvent(e) ?? []);
+  return [
+    "BEGIN:VCALENDAR",
+    "VERSION:2.0",
+    "PRODID:-//Pack 786//Events//EN",
+    "METHOD:PUBLISH",
+    "X-WR-CALNAME:Cub Scout Pack 786",
+    "CALSCALE:GREGORIAN",
+    ...vevents,
+    "END:VCALENDAR",
+  ].join("\r\n");
 }
