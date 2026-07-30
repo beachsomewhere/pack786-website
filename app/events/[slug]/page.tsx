@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAllEvents, getEventBySlug } from "@/lib/events";
 import { buildGoogleCalendarUrl, buildIcsDataUrl, buildOutlookUrl } from "@/lib/calendar";
@@ -67,6 +68,14 @@ export default async function EventDetailPage({ params }: { params: { slug: stri
 
       <div>
         <h2 className="font-display text-lg font-bold text-trail-blue">Add to Calendar</h2>
+        <p className="mt-1 text-xs text-trail-ink/50">
+          Already subscribed to our{" "}
+          <Link href="/events#subscribe" className="underline">
+            full pack calendar
+          </Link>
+          ? This event is already there — adding it here creates a separate, duplicate entry that won't
+          update if details change.
+        </p>
         <div className="mt-3 flex flex-wrap gap-3 text-sm">
           <a className="underline" href={buildGoogleCalendarUrl(event)} target="_blank" rel="noreferrer">Google Calendar</a>
           <a className="underline" href={buildOutlookUrl(event)} target="_blank" rel="noreferrer">Outlook</a>

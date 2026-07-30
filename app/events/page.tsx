@@ -24,7 +24,7 @@ export default async function EventsPage({
       <p className="eyebrow">What's Happening</p>
       <h1 className="mt-2 font-display text-4xl font-bold text-trail-blue">Pack 786 Events</h1>
 
-      <div className="mt-6 card bg-trail-blue/5">
+      <div id="subscribe" className="mt-6 card bg-trail-blue/5 scroll-mt-24">
         <p className="font-display font-bold text-trail-blue">Subscribe to Pack 786's Calendar</p>
         <p className="mt-1 text-sm text-trail-ink/70">
           Add this once and every event automatically stays up to date in your own calendar app — if a
