@@ -1,10 +1,52 @@
 import type { PackEvent } from "@/types";
 
+// All pack events happen in Castle Rock, CO (Mountain Time). Event times in
+// data/events.json are plain wall-clock times with no offset, so we have to
+// explicitly convert them from Mountain Time to true UTC (handling the
+// MST/MDT switch automatically) before writing "Z" (UTC) timestamps into the
+// calendar feed — otherwise calendar apps read them as literal UTC times and
+// shift them by 6-7 hours for anyone not already in UTC.
+const PACK_TIMEZONE = "America/Denver";
+
+function getTimeZoneOffsetMs(date: Date, timeZone: string): number {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone,
+    hourCycle: "h23",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  })
+    .formatToParts(date)
+    .reduce((acc, p) => {
+      if (p.type !== "literal") acc[p.type] = p.value;
+      return acc;
+    }, {} as Record<string, string>);
+  const asUtc = Date.UTC(
+    Number(parts.year),
+    Number(parts.month) - 1,
+    Number(parts.day),
+    Number(parts.hour),
+    Number(parts.minute),
+    Number(parts.second)
+  );
+  return asUtc - date.getTime();
+}
+
+/** Interprets `isoLocal` (e.g. "2026-08-18T18:00:00") as wall-clock time in `timeZone` and returns the true UTC instant. */
+function zonedTimeToUtc(isoLocal: string, timeZone: string): Date {
+  const naiveUtc = new Date(`${isoLocal}Z`);
+  const offsetMs = getTimeZoneOffsetMs(naiveUtc, timeZone);
+  return new Date(naiveUtc.getTime() - offsetMs);
+}
+
 function parseStartEnd(event: PackEvent): { start: Date; end: Date } | null {
   const firstDate = event.date?.split("/")[0];
   if (!firstDate) return null;
-  const start = new Date(`${firstDate}T${to24h(event.startTime) ?? "18:00"}:00`);
-  const end = new Date(`${firstDate}T${to24h(event.endTime) ?? to24h(event.startTime) ?? "19:00"}:00`);
+  const start = zonedTimeToUtc(`${firstDate}T${to24h(event.startTime) ?? "18:00"}:00`, PACK_TIMEZONE);
+  const end = zonedTimeToUtc(`${firstDate}T${to24h(event.endTime) ?? to24h(event.startTime) ?? "19:00"}:00`, PACK_TIMEZONE);
   if (isNaN(start.getTime())) return null;
   return { start, end: end > start ? end : new Date(start.getTime() + 60 * 60 * 1000) };
 }
