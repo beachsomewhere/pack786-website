@@ -19,7 +19,10 @@ export default function EventCard({ event }: { event: PackEvent }) {
       className="card flex flex-col gap-2 transition hover:-translate-y-0.5 hover:shadow-md"
     >
       <div className="flex items-center justify-between gap-2">
-        <span className="eyebrow">{event.category}</span>
+        <span className="eyebrow">
+          {event.category}
+          {event.den && event.den !== "All Dens" ? ` · ${event.den}` : ""}
+        </span>
         <span className={`rounded-full px-3 py-1 text-xs font-semibold ${STATUS_STYLES[event.status] ?? "bg-trail-line"}`}>
           {event.status}
         </span>

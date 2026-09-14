@@ -16,8 +16,12 @@ export default async function EventsPage({
     ? all.filter((e) => e.category === searchParams.category)
     : all;
 
-  const upcoming = filtered.filter((e) => e.status !== "Completed" && e.status !== "Canceled");
-  const past = filtered.filter((e) => e.status === "Completed");
+  const upcoming = filtered
+    .filter((e) => e.status !== "Completed" && e.status !== "Canceled")
+    .sort((a, b) => (a.date || "9999").localeCompare(b.date || "9999"));
+  const past = filtered
+    .filter((e) => e.status === "Completed")
+    .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-16">

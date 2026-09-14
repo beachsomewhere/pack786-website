@@ -491,21 +491,6 @@
     "confirmed": true
   },
   {
-    "slug": "family-camping-trip-2026-09",
-    "name": "Family Camping Trip",
-    "category": "Camping",
-    "programYear": "2026-2027",
-    "status": "Confirmed",
-    "date": "2026-09-19/2026-09-20",
-    "dateLabel": "Fri-Sat, 9/19-9/20",
-    "startTime": "6:00 PM",
-    "endTime": "3:00 PM",
-    "location": "Wick Property",
-    "description": "Family Camping Trip.",
-    "featured": true,
-    "confirmed": true
-  },
-  {
     "slug": "parent-meeting-2026-09-29",
     "name": "Parent Meeting",
     "category": "Parent Meeting",
@@ -526,8 +511,8 @@
     "category": "Pack Meeting",
     "programYear": "2026-2027",
     "status": "Confirmed",
-    "date": "2026-10-06",
-    "dateLabel": "Tuesday, 10/6/2026",
+    "date": "2026-10-05",
+    "dateLabel": "Monday, 10/5/2026",
     "startTime": "6:00 PM",
     "endTime": "7:30 PM",
     "location": "AVA",
@@ -839,6 +824,21 @@
     "location": "Chalk Creek Campground",
     "description": "Summer Camping Trip.",
     "featured": true,
+    "confirmed": true
+  },
+  {
+    "slug": "webelos-den-meeting-2026-10-22",
+    "name": "Webelos Den Meeting",
+    "category": "Den Meeting",
+    "den": "Webelos",
+    "programYear": "2026-2027",
+    "status": "Confirmed",
+    "date": "2026-10-22",
+    "dateLabel": "Thursday, 10/22/2026",
+    "startTime": "6:00 PM",
+    "endTime": "7:00 PM",
+    "location": "Castle Rock Library",
+    "description": "Webelos den meeting.",
     "confirmed": true
   }
 ]
