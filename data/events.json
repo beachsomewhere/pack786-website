@@ -827,14 +827,14 @@
     "confirmed": true
   },
   {
-    "slug": "webelos-den-meeting-2026-10-22",
+    "slug": "webelos-den-meeting-2026-09-22",
     "name": "Webelos Den Meeting",
     "category": "Den Meeting",
     "den": "Webelos",
     "programYear": "2026-2027",
     "status": "Confirmed",
-    "date": "2026-10-22",
-    "dateLabel": "Thursday, 10/22/2026",
+    "date": "2026-09-22",
+    "dateLabel": "Tuesday, 9/22/2026",
     "startTime": "6:00 PM",
     "endTime": "7:00 PM",
     "location": "Castle Rock Library",
