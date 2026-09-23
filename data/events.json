@@ -539,15 +539,15 @@
     "name": "Trunk or Treat",
     "category": "Pack Event",
     "programYear": "2026-2027",
-    "status": "Tentative",
+    "status": "Confirmed",
     "date": "2026-10-30",
-    "dateLabel": "TBD, 10/30/2026",
-    "startTime": "5:30 PM",
-    "endTime": "7:30 PM",
+    "dateLabel": "Friday, 10/30/2026",
+    "startTime": "5:00 PM",
+    "endTime": "8:00 PM",
     "location": "AVA Parking Lot",
     "description": "Trunk or Treat.",
     "featured": true,
-    "confirmed": false
+    "confirmed": true
   },
   {
     "slug": "pack-meeting-reptile-presenter-2026",
@@ -564,8 +564,8 @@
     "confirmed": true
   },
   {
-    "slug": "pack-fundraiser-2026-11-14",
-    "name": "Pack Fundraiser",
+    "slug": "butterbraid-pickup-2026-11-14",
+    "name": "Butterbraid Pickup",
     "category": "Fundraiser",
     "programYear": "2026-2027",
     "status": "Confirmed",
@@ -573,7 +573,7 @@
     "dateLabel": "Saturday, 11/14/2026",
     "startTime": "10:30 AM",
     "location": "AVA Parking Lot",
-    "description": "Pack fundraising activity in the AVA parking lot. Please bring a cooler.",
+    "description": "Butterbraid order pickup in the AVA parking lot. Please bring a cooler.",
     "packingList": [
       "Cooler"
     ],
