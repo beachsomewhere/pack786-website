@@ -19,6 +19,10 @@ const WHY_CUB_SCOUTING = [
   { title: "Future Readiness", desc: "Preparing Scouts for their next journey into Scouts BSA.", icon: "🚀" },
 ];
 
+// The featured/upcoming lists are filtered against today's date, so re-render
+// at least hourly rather than serving a build-time snapshot.
+export const revalidate = 3600;
+
 export default async function HomePage() {
   const featured = (await getFeaturedEvents()).slice(0, 3);
   const upcoming = await getUpcomingEvents(3);
