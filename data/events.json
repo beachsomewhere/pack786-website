@@ -564,6 +564,22 @@
     "confirmed": true
   },
   {
+    "slug": "pack-fundraiser-2026-11-14",
+    "name": "Pack Fundraiser",
+    "category": "Fundraiser",
+    "programYear": "2026-2027",
+    "status": "Confirmed",
+    "date": "2026-11-14",
+    "dateLabel": "Saturday, 11/14/2026",
+    "startTime": "10:30 AM",
+    "location": "AVA Parking Lot",
+    "description": "Pack fundraising activity in the AVA parking lot. Please bring a cooler.",
+    "packingList": [
+      "Cooler"
+    ],
+    "confirmed": true
+  },
+  {
     "slug": "parent-meeting-2026-11-17",
     "name": "Parent Meeting",
     "category": "Parent Meeting",
