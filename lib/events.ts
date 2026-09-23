@@ -1,4 +1,4 @@
-import type { PackEvent, ProgramYear } from "@/types";
+import type { EventStatus, PackEvent, ProgramYear } from "@/types";
 import eventsData from "@/data/events.json";
 
 // ---------------------------------------------------------------------------
@@ -56,6 +56,15 @@ export function isPastEvent(event: PackEvent, today: string = todayInPackTimezon
 
 export function isUpcomingEvent(event: PackEvent, today: string = todayInPackTimezone()): boolean {
   return !isCanceledEvent(event) && !isPastEvent(event, today);
+}
+
+/** The status to SHOW for an event. An event whose date has passed reads as
+ *  "Completed" even if its stored status was never updated — otherwise the
+ *  Past Events Archive renders cards still badged "Confirmed"/"Tentative".
+ *  "Canceled" is preserved, since a canceled event never happened. */
+export function getDisplayStatus(event: PackEvent, today: string = todayInPackTimezone()): EventStatus {
+  if (isCanceledEvent(event)) return event.status;
+  return isPastEvent(event, today) ? "Completed" : event.status;
 }
 
 /** Splits any event list into the two buckets the events page and home page
