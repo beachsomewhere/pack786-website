@@ -1,3 +1,4 @@
+import { getDisplayStatus } from "@/lib/events";
 import type { PackEvent } from "@/types";
 
 // All pack events happen in Castle Rock, CO (Mountain Time). Event times in
@@ -103,7 +104,7 @@ function buildVEvent(event: PackEvent): string[] | null {
     `DTSTAMP:${fmt(new Date())}`,
     `DTSTART:${fmt(range.start)}`,
     `DTEND:${fmt(range.end)}`,
-    `SUMMARY:${event.name}${event.status === "Tentative" ? " (Tentative)" : ""}`,
+    `SUMMARY:${event.name}${getDisplayStatus(event) === "Tentative" ? " (Tentative)" : ""}`,
     `LOCATION:${event.location ?? ""}`,
     `DESCRIPTION:${(event.description ?? "").replace(/\n/g, "\\n")}`,
     "END:VEVENT",

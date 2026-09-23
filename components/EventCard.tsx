@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { getDisplayStatus } from "@/lib/events";
 import type { PackEvent } from "@/types";
 
 const STATUS_STYLES: Record<string, string> = {
@@ -13,6 +14,10 @@ const STATUS_STYLES: Record<string, string> = {
 };
 
 export default function EventCard({ event }: { event: PackEvent }) {
+  // Badge the event as it actually stands today, not as its stored status
+  // was last hand-edited.
+  const status = getDisplayStatus(event);
+
   return (
     <Link
       href={`/events/${event.slug}`}
@@ -23,8 +28,8 @@ export default function EventCard({ event }: { event: PackEvent }) {
           {event.category}
           {event.den && event.den !== "All Dens" ? ` · ${event.den}` : ""}
         </span>
-        <span className={`rounded-full px-3 py-1 text-xs font-semibold ${STATUS_STYLES[event.status] ?? "bg-trail-line"}`}>
-          {event.status}
+        <span className={`rounded-full px-3 py-1 text-xs font-semibold ${STATUS_STYLES[status] ?? "bg-trail-line"}`}>
+          {status}
         </span>
       </div>
       <h3 className="font-display text-xl font-bold text-trail-blue">{event.name}</h3>
@@ -33,7 +38,7 @@ export default function EventCard({ event }: { event: PackEvent }) {
         {event.startTime ? ` · ${event.startTime}${event.endTime ? `–${event.endTime}` : ""}` : ""}
       </p>
       {event.location && <p className="text-sm text-trail-ink/70">📍 {event.location}</p>}
-      {event.status === "Tentative" && (
+      {status === "Tentative" && (
         <p className="text-xs font-medium text-trail-gold-dark">Date or details subject to change</p>
       )}
     </Link>

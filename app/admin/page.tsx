@@ -1,4 +1,4 @@
-import { getAllEvents } from "@/lib/events";
+import { getAllEvents, getDisplayStatus, splitUpcomingAndPast } from "@/lib/events";
 
 // This page sits behind middleware.ts, which currently checks only for a
 // placeholder cookie. Do not treat this as production-ready access control —
@@ -6,8 +6,9 @@ import { getAllEvents } from "@/lib/events";
 
 export default async function AdminDashboard() {
   const events = await getAllEvents();
-  const upcoming = events.filter((e) => e.status !== "Completed" && e.status !== "Canceled");
-  const tentative = events.filter((e) => e.status === "Tentative");
+  // Same date-based rule the public pages use, so the counts agree.
+  const { upcoming } = splitUpcomingAndPast(events);
+  const tentative = upcoming.filter((e) => getDisplayStatus(e) === "Tentative");
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">

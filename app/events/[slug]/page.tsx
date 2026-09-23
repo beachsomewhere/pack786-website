@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAllEvents, getEventBySlug } from "@/lib/events";
+import { getAllEvents, getDisplayStatus, getEventBySlug } from "@/lib/events";
 import { buildGoogleCalendarUrl, buildIcsDataUrl, buildOutlookUrl } from "@/lib/calendar";
 
 export async function generateStaticParams() {
@@ -11,6 +11,7 @@ export async function generateStaticParams() {
 export default async function EventDetailPage({ params }: { params: { slug: string } }) {
   const event = await getEventBySlug(params.slug);
   if (!event) return notFound();
+  const status = getDisplayStatus(event);
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-16">
@@ -19,9 +20,9 @@ export default async function EventDetailPage({ params }: { params: { slug: stri
 
       <div className="mt-3 flex flex-wrap items-center gap-3">
         <span className="rounded-full bg-trail-blue/10 px-3 py-1 text-sm font-semibold text-trail-blue">
-          {event.status}
+          {status}
         </span>
-        {event.status === "Tentative" && (
+        {status === "Tentative" && (
           <span className="text-sm font-medium text-trail-gold-dark">Date or details subject to change</span>
         )}
       </div>
