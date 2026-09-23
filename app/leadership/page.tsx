@@ -15,6 +15,22 @@ const LEADERS = [
   { name: "Daniel McElwaine", role: "AOL Den Leader", grade: "5th Grade", email: "Disco73@msn.com" },
 ];
 
+/** An email with an explicit break opportunity before the "@", so a long address
+ *  wraps at the domain boundary ("CubScoutPack786Treasurer" / "@gmail.com")
+ *  rather than mid-word. `break-words` on the link stays as the fallback for a
+ *  local part that is itself wider than the card. */
+function EmailText({ email }: { email: string }) {
+  const at = email.indexOf("@");
+  if (at === -1) return <>{email}</>;
+  return (
+    <>
+      {email.slice(0, at)}
+      <wbr />
+      {email.slice(at)}
+    </>
+  );
+}
+
 function initials(name: string) {
   return name
     .split(" ")
@@ -47,8 +63,12 @@ export default function LeadershipPage() {
             <p className="mt-4 font-display font-bold text-trail-blue">{leader.name}</p>
             <p className="text-sm text-trail-ink/60">{leader.role}</p>
             {leader.grade && <p className="text-sm text-trail-ink/60">{leader.grade}</p>}
-            <a href={`mailto:${leader.email}`} className="mt-2 inline-block text-sm underline">
-              {leader.email}
+            {/* An email is one unbreakable token (no spaces, and browsers don't
+                break at "@" or "."), so a long one overflows the card at any width
+                unless it is allowed to wrap. Block, not inline-block: a
+                shrink-to-fit box ignores `break-words` when sizing itself. */}
+            <a href={`mailto:${leader.email}`} className="mt-2 block break-words text-xs underline">
+              <EmailText email={leader.email} />
             </a>
             {leader.phone && <p className="mt-1 text-sm text-trail-ink/60">{leader.phone}</p>}
           </div>
